@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { useState } from "react";
 
 const MainNav = () => {
@@ -25,16 +25,16 @@ const MainNav = () => {
         <div class="px-4 py-5 xl:py-0 bg-gray-900 border-b border-gray-100">
           <div class="flex items-center justify-between -m-2">
             <div class="flex flex-wrap items-center w-auto p-2">
-              <Link class="block max-w-max xl:mr-5" href="/">
+              <Link class="block max-w-max xl:mr-12" href="/">
                 <img
                   src="/img/examprince_white_svg.svg"
                   alt=""
-                  height={"160px"}
-                  width={"160px"}
+                  height={"170px"}
+                  width={"170px"}
                 />
               </Link>
               <ul class="hidden xl:flex flex-nowrap">
-                <li class="mr-8">
+                <li class="mr-5">
                   <Link href={"/vendors"}>
                     <span
                       class="flex flex-wrap items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
@@ -42,7 +42,7 @@ const MainNav = () => {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="2.3em"
+                        width="2em"
                         height="1.8em"
                         viewBox="0 0 20 20"
                       >
@@ -59,7 +59,7 @@ const MainNav = () => {
                     </span>
                   </Link>
                 </li>
-                <li class="mr-8">
+                <li class="mr-5">
                   <Link href={"/certifications"}>
                     <span
                       class="flex flex-wrap items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
@@ -89,14 +89,15 @@ const MainNav = () => {
                     </span>
                   </Link>
                 </li>
-                <li className="relative group mr-8">
+                <li className="relative group mr-5">
                   <Link href={"video-courses"}>
                     <span className="flex items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="2.2em"
+                        width="2em"
                         height="2em"
                         viewBox="0 0 24 24"
+                        style={{ marginRight: "2px" }}
                       >
                         <path
                           fill="currentColor"
@@ -107,7 +108,7 @@ const MainNav = () => {
                     </span>
                   </Link>
                 </li>
-                <li className="relative group mr-8">
+                <li className="relative group mr-5">
                   <Link href={"unlimited-access"}>
                     <span className="flex items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
                       <svg
@@ -115,6 +116,7 @@ const MainNav = () => {
                         width="2em"
                         height="1.8em"
                         viewBox="0 0 48 48"
+                        style={{ marginRight: "2px" }}
                       >
                         <path
                           fill="none"
