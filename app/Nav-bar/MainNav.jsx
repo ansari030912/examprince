@@ -1,11 +1,17 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
+import { IconButton } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 
 const MainNav = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [showVendors, setShowVendors] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const email = "howrex95@gmail.com";
+  const truncatedEmail = email.length > 10 ? `${email.slice(0, 10)}...` : email;
 
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
@@ -22,14 +28,14 @@ const MainNav = () => {
   return (
     <section class="overflow-hidden">
       <div>
-        <div class="px-4 py-5 xl:py-0 bg-gray-900 border-b border-gray-100">
-          <div class="flex items-center justify-between -m-2">
+        <div class="px-4 py-5 xl:py-0 bg-white border-b border-gray-100">
+          <div class="flex items-center justify-between -m-2 ">
             <div class="flex flex-wrap items-center w-auto p-2">
               <Link class="block max-w-max xl:mr-12" href="/">
                 <img
-                  src="/img/examprince_white_svg.svg"
+                  src="/img/examprince_dark_svg.svg"
                   alt=""
-                  height={"170px"}
+                  height={"120px"}
                   width={"170px"}
                 />
               </Link>
@@ -37,32 +43,7 @@ const MainNav = () => {
                 <li class="mr-5">
                   <Link href={"/vendors"}>
                     <span
-                      class="flex flex-wrap items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
-                      href="#"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="2em"
-                        height="1.8em"
-                        viewBox="0 0 20 20"
-                      >
-                        <g
-                          fill="currentColor"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                        >
-                          <path d="M10.392 11.564a2 2 0 0 1-.587-2.767l2.181-3.353a2 2 0 1 1 3.353 2.18l-2.18 3.354a2 2 0 0 1-2.767.586m-2.442.202a3.999 3.999 0 0 1 .179-4.06l2.18-3.353a4 4 0 1 1 6.707 4.362l-2.18 3.353a4 4 0 0 1-6.886-.302" />
-                          <path d="M5.444 15.503a2 2 0 0 1-.587-2.767l2.181-3.353a2 2 0 1 1 3.353 2.18l-2.18 3.354a2 2 0 0 1-2.767.586m-2.442.202a3.999 3.999 0 0 1 .179-4.06l2.18-3.352a4 4 0 1 1 6.707 4.361l-2.18 3.353a4 4 0 0 1-6.886-.302" />
-                        </g>
-                      </svg>
-                      <p class="text-white">Vendors</p>
-                    </span>
-                  </Link>
-                </li>
-                <li class="mr-5">
-                  <Link href={"/certifications"}>
-                    <span
-                      class="flex flex-wrap items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
+                      class="flex flex-wrap items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
                       href="#"
                     >
                       <svg
@@ -85,17 +66,49 @@ const MainNav = () => {
                           />
                         </g>
                       </svg>
-                      <p class="text-white">Certifications</p>
+                      <p class="text-gray-600 font-bold">
+                        Vendor & Certificate
+                      </p>
                     </span>
                   </Link>
                 </li>
-                <li className="relative group mr-5">
-                  <Link href={"video-courses"}>
-                    <span className="flex items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
+                {/* <li class="mr-5">
+                  <Link href={"/certifications"}>
+                    <span
+                      class="flex flex-wrap items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
+                      href="#"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="2em"
-                        height="2em"
+                        height="1.8em"
+                        viewBox="0 0 24 24"
+                      >
+                        <g fill="none">
+                          <path
+                            fill="currentColor"
+                            d="m15 22l-.555.832A1 1 0 0 0 16 22zm-3-2l.555-.832a1 1 0 0 0-1.11 0zm-3 2H8a1 1 0 0 0 1.555.832zM8.75 3.537l-.08.997zm1.685-.697l-.762-.648zM6.532 5.686l-.997.08zm2.154-2.154l.08-.997zM5.84 7.435l.648.761zm.697-1.684l.997-.08zm-.747 4.772l-.648.762zm0-3.046l-.648-.762zm.747 4.772l-.997-.08zm-.697-1.684l.648-.761zm2.846 3.903l.08.997zm-2.154-2.154l.997.08zm3.903 2.846l.761-.648zm-1.684-.697l-.08-.997zm4.772.747l.762.648zm-3.046 0l-.762.648zm4.772-.747l.08-.997zm-1.684.697l-.761-.648zm3.903-2.846l.997-.08zm-2.154 2.154l-.08.997zm2.846-3.903l.648.762zm-.697 1.684l-.997.08zm.747-4.772l.648-.762zm0 3.046l-.648-.761zm-.747-4.772l-.997-.08zm.697 1.684l-.648.761zm-2.846-3.903l-.08-.997zm2.154 2.154l.997.08zM13.565 2.84l.762-.648zm1.684.697l.08.997zm-1.726-.747l-.761.648zm-3.046 0l.761.648zM9 14.458l.044-.999zm6.555 6.71l-3-2l-1.11 1.664l3 2zm-4.11-2l-3 2l1.11 1.664l3-2zm1.317-15.73l.042.05l1.523-1.296l-.042-.05zm2.567 1.096l.065-.005l-.16-1.994l-.065.005zm1.142 1.072l-.005.065l1.994.16l.005-.065zm1.041 2.59l.05.042l1.296-1.523l-.05-.042zm.05 1.566l-.05.042l1.296 1.523l.05-.042zm-1.096 2.567l.005.065l1.994-.16l-.005-.065zm-1.072 1.142l-.065-.005l-.16 1.994l.065.005zm-2.59 1.041l-.042.05l1.523 1.296l.042-.05zm-1.566.05l-.042-.05l-1.523 1.296l.042.05zm-2.567-1.096l-.065.005l.16 1.994l.065-.005zm-1.142-1.072l.005-.065l-1.994-.16l-.005.065zm-1.041-2.59l-.05-.042l-1.296 1.523l.05.042zm-.05-1.566l.05-.042l-1.296-1.523l-.05.042zm1.096-2.567l-.005-.065l-1.994.16l.005.065zm1.072-1.142l.065.005l.16-1.994l-.065-.005zm2.59-1.041l.042-.05l-1.523-1.296l-.042.05zM8.671 4.534a3 3 0 0 0 2.525-1.046L9.673 2.192a1 1 0 0 1-.842.348zM7.529 5.606a1 1 0 0 1 1.077-1.077l.16-1.994a3 3 0 0 0-3.23 3.231zm-1.041 2.59a3 3 0 0 0 1.046-2.525l-1.994.16a1 1 0 0 1-.348.842zm-.05 1.566a1 1 0 0 1 0-1.524L5.142 6.715a3 3 0 0 0 0 4.57zm1.096 2.567a3 3 0 0 0-1.046-2.525l-1.296 1.523a1 1 0 0 1 .348.842zm1.072 1.142a1 1 0 0 1-1.077-1.077l-1.994-.16a3 3 0 0 0 3.231 3.23zm4.156 1.09a1 1 0 0 1-1.524 0l-1.523 1.297a3 3 0 0 0 4.57 0zm3.71-2.167a1 1 0 0 1-1.078 1.077l-.16 1.994a3 3 0 0 0 3.23-3.231zm1.04-2.59a3 3 0 0 0-1.046 2.525l1.994-.16a1 1 0 0 1 .348-.842zm.05-1.566a1 1 0 0 1 0 1.524l1.296 1.523a3 3 0 0 0 0-4.57zm-1.096-2.567a3 3 0 0 0 1.046 2.525l1.296-1.523a1 1 0 0 1-.348-.842zm-1.072-1.142a1 1 0 0 1 1.077 1.077l1.994.16a3 3 0 0 0-3.231-3.23zm-2.59-1.041a3 3 0 0 0 2.525 1.046l-.16-1.994a1 1 0 0 1-.842-.348zm1.48-1.346a3 3 0 0 0-4.569 0l1.523 1.296a1 1 0 0 1 1.524 0zm-3.088 12.37a3 3 0 0 0-2.152-1.053l-.088 1.998a1 1 0 0 1 .717.351zM9.044 13.46a3.011 3.011 0 0 0-.373.007l.16 1.994a1 1 0 0 1 .125-.003zM10 22v-7.542H8V22zm5.33-8.534a3.012 3.012 0 0 0-.374-.007l.088 1.998a1 1 0 0 1 .125.003zm-.374-.007a3 3 0 0 0-2.152 1.053l1.523 1.296a1 1 0 0 1 .717-.35zm-.956 1V22h2v-7.542z"
+                          />
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m14 8l-3 3l-1-1"
+                          />
+                        </g>
+                      </svg>
+                      <p class="text-gray-600 font-bold">Certifications</p>
+                    </span>
+                  </Link>
+                </li> */}
+                <li className="relative group mr-5">
+                  <Link href={"video-courses"}>
+                    <span className="flex items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="2em"
+                        height="1.8em"
                         viewBox="0 0 24 24"
                         style={{ marginRight: "2px" }}
                       >
@@ -104,13 +117,13 @@ const MainNav = () => {
                           d="M19.173 21h-4.961q-.348 0-.588-.24q-.24-.239-.24-.587v-4.961q0-.348.24-.588t.588-.24h4.961q.348 0 .588.24q.239.24.239.588v1.654l1.654-1.654v4.961L20 18.519v1.654q0 .348-.24.588q-.239.239-.587.239m-7.2-11.5q-1.046 0-1.773.727T9.473 12q0 .796.416 1.408q.415.611 1.111.903v-1.134q-.238-.2-.383-.532T10.473 12q0-.625.438-1.062t1.062-.438t1.06.438t.434 1.062h1.006q0-1.046-.727-1.773T11.973 9.5M10.134 21l-.361-2.892q-.479-.145-1.035-.454q-.557-.31-.947-.664l-2.668 1.135l-1.865-3.25l2.306-1.739q-.045-.27-.073-.558q-.03-.288-.03-.559q0-.252.03-.53q.028-.278.073-.626L3.258 9.126l1.865-3.212L7.771 7.03q.448-.373.97-.673q.52-.3 1.013-.464L10.134 3h3.732l.361 2.912q.575.202 1.016.463t.909.654l2.725-1.115l1.865 3.211l-2.382 1.796q.082.31.092.569t.01.51h-1.039q-.006-.436-.056-.77t-.15-.697l2.227-1.683l-.994-1.7l-2.552 1.07q-.454-.499-1.193-.935q-.74-.435-1.4-.577L13 4h-1.994l-.312 2.689q-.756.161-1.39.52q-.633.358-1.26.985L5.55 7.15l-.994 1.7l2.169 1.62q-.125.336-.175.73t-.05.82q0 .38.05.755t.156.73l-2.15 1.645l.994 1.7l2.475-1.05q.6.606 1.36 1.002t1.615.579V21z"
                         />
                       </svg>
-                      <p className="text-white">Video Course</p>
+                      <p className="text-gray-600 font-bold">Video Course</p>
                     </span>
                   </Link>
                 </li>
                 <li className="relative group mr-5">
                   <Link href={"unlimited-access"}>
-                    <span className="flex items-center py-8 text-sm font-medium text-gray-500 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
+                    <span className="flex items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="2em"
@@ -140,7 +153,9 @@ const MainNav = () => {
                           d="m21.898 3l22.051 22.051L24 45L4.051 25.051l7.034-7.033"
                         />
                       </svg>
-                      <p className="text-white">Unlimited Access</p>
+                      <p className="text-gray-600 font-bold">
+                        Unlimited Access
+                      </p>
                     </span>
                   </Link>
                 </li>
@@ -148,9 +163,35 @@ const MainNav = () => {
             </div>
             <div class="w-auto p-2">
               <div class="hidden xl:flex flex-wrap items-center -m-3">
+                <div class="w-auto p-2 flex">
+                  {searchOpen && (
+                    <input
+                      class="appearance-none px-6 py-3 w-full text-sm text-gray-700 font-bold bg-gray-50 placeholder-gray-300 outline-none border border-gray-100 focus:ring-1 focus:ring-gray-100 rounded-full"
+                      id="formInput1-1"
+                      type="text"
+                      placeholder="Search"
+                    />
+                  )}
+                </div>
+                <IconButton
+                  className="px-2 ml-2"
+                  onClick={() => setSearchOpen(!searchOpen)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"
+                    />
+                  </svg>
+                </IconButton>
                 <div class="w-auto p-3">
                   <Link
-                    class="max-w-max flex text-gray-100 hover:text-gray-300"
+                    className="flex items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer"
                     href="cart"
                   >
                     <svg
@@ -160,66 +201,68 @@ const MainNav = () => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill="#8e9196"
+                        fill="currentColor"
                         d="M7.25 9A.75.75 0 0 1 8 8.25h3a.75.75 0 0 1 0 1.5H8A.75.75 0 0 1 7.25 9"
                       />
                       <path
-                        fill="#8e9196"
+                        fill="currentColor"
                         fill-rule="evenodd"
                         d="M1.289 2.763a.75.75 0 0 1 .948-.475l.305.102c.626.209 1.155.385 1.572.579c.442.206.826.46 1.117.865c.291.403.412.848.467 1.333l.009.083h10.804c.976 0 1.792 0 2.417.092c.651.097 1.28.318 1.676.92c.396.6.352 1.265.184 1.902c-.16.61-.482 1.36-.867 2.258l-.467 1.089c-.176.412-.332.775-.493 1.062c-.175.31-.388.592-.711.805c-.323.213-.667.298-1.021.337c-.328.035-.722.035-1.17.035H6.154c.074.134.159.244.255.341c.277.277.666.457 1.4.556c.755.101 1.756.103 3.191.103h8a.75.75 0 0 1 0 1.5h-8.055c-1.367 0-2.47 0-3.337-.116c-.9-.122-1.658-.38-2.26-.982c-.601-.602-.86-1.36-.981-2.26c-.117-.867-.117-1.97-.117-3.337V6.883c0-.713 0-1.185-.042-1.546c-.04-.342-.107-.506-.194-.626c-.086-.12-.221-.237-.533-.382c-.33-.153-.777-.304-1.453-.53l-.265-.087a.75.75 0 0 1-.474-.95m4.518 9.487h10.215c.496 0 .809-.001 1.046-.027c.219-.023.303-.062.356-.097c.053-.035.122-.097.23-.289c.117-.208.24-.495.436-.95l.429-1c.414-.968.69-1.616.819-2.106c.126-.476.062-.62.014-.694c-.049-.073-.157-.189-.644-.26c-.501-.075-1.205-.077-2.257-.077H5.75V9.5c0 1.172 0 2.054.056 2.75m1.694 9.5a2.25 2.25 0 1 1 0-4.5a2.25 2.25 0 0 1 0 4.5m-.75-2.25a.75.75 0 1 0 1.5 0a.75.75 0 0 0-1.5 0m7.5 0a2.25 2.25 0 1 0 4.5 0a2.25 2.25 0 0 0-4.5 0m2.25.75a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5"
                         clip-rule="evenodd"
                       />
                     </svg>
-                    <p className="text-lg ml-1 font-medium">Cart</p>
+                    <p className="text-lg ml-1 text-gray-600 font-medium">
+                      Cart
+                    </p>
                   </Link>
                 </div>
+
                 <div class="w-auto p-3">
-                  <input
-                    class="appearance-none px-6 py-3.5 w-full text-sm text-gray-700 font-bold bg-gray-50 placeholder-gray-300 outline-none border border-gray-100 focus:ring-1 focus:ring-gray-100 rounded-full"
-                    id="formInput1-1"
-                    type="text"
-                    placeholder="Search"
-                  />
-                </div>
-                <div class="w-auto p-3">
-                  <Link
-                    href={"/login"}
-                    style={{
-                      padding: "10px",
-                      border: "2px solid white",
-                    }}
-                    className="hover:text-gray-700 text-white hover:bg-white"
-                  >
-                    <b>Login</b>
+                  {/* <Link href={"/login"}>
+                    <b
+                      style={{
+                        padding: "10px",
+                      }}
+                      className="hover:text-white  hover:border-gray-700 border-gray-700 border-2 text-gray-700 hover:bg-gray-700"
+                    >
+                      Log In
+                    </b>
                   </Link>
                   <Link
                     href={"/register"}
                     style={{
                       padding: "10px",
-                      border: "2px solid white",
                       marginLeft: "4px",
                     }}
-                    className="hover:text-gray-700 text-white hover:bg-white"
+                    className="hover:text-gray-700 bg-gray-700 border-gray-700 border-2 text-white hover:bg-white"
                   >
-                    <b>Register</b>
-                  </Link>
-                  {/* <div class="flex flex-wrap items-center -m-2">
+                    <b>Register Now</b>
+                  </Link> */}
+                  <div class="flex flex-wrap items-center -m-2">
                     <div class="w-auto p-2">
                       <div class="flex flex-wrap -m-2">
-                        <div class="w-auto p-2">
-                          <img src="/avatar.png" alt="" />
+                        <div class="w-auto p-2 -mr-1">
+                          <img
+                            src="/avatar.png"
+                            height={"45px"}
+                            width={"45px"}
+                            alt=""
+                          />
                         </div>
                         <div class="w-auto p-2">
-                          <h2 class="text-sm font-semibold text-white">
-                            John Doe
+                          <h2 class="text-sm font-semibold text-gray-700">
+                            Ali Hussnain
                           </h2>
                           <p class="text-sm font-medium text-gray-500">
-                            johndoe@flex.co
+                            {truncatedEmail}
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div class="w-auto p-2" onClick={toggleDropdown}>
+                    <div
+                      class="w-auto p-2 cursor-pointer"
+                      onClick={toggleDropdown}
+                    >
                       <span class="block max-w-max text-gray-500 hover:text-gray-600">
                         <svg
                           width="24"
@@ -230,29 +273,35 @@ const MainNav = () => {
                         >
                           <path
                             d="M17 9.17C16.8126 8.98375 16.5592 8.87921 16.295 8.87921C16.0308 8.87921 15.7774 8.98375 15.59 9.17L12 12.71L8.46001 9.17C8.27265 8.98375 8.0192 8.87921 7.75501 8.87921C7.49082 8.87921 7.23737 8.98375 7.05001 9.17C6.95628 9.26297 6.88189 9.37357 6.83112 9.49543C6.78035 9.61729 6.75421 9.74799 6.75421 9.88C6.75421 10.012 6.78035 10.1427 6.83112 10.2646C6.88189 10.3864 6.95628 10.497 7.05001 10.59L11.29 14.83C11.383 14.9237 11.4936 14.9981 11.6154 15.0489C11.7373 15.0997 11.868 15.1258 12 15.1258C12.132 15.1258 12.2627 15.0997 12.3846 15.0489C12.5064 14.9981 12.617 14.9237 12.71 14.83L17 10.59C17.0937 10.497 17.1681 10.3864 17.2189 10.2646C17.2697 10.1427 17.2958 10.012 17.2958 9.88C17.2958 9.74799 17.2697 9.61729 17.2189 9.49543C17.1681 9.37357 17.0937 9.26297 17 9.17Z"
-                            fill="white"
+                            fill="currentColor"
                           ></path>
                         </svg>
                       </span>
                     </div>
-                  </div> */}
+                  </div>
                   {isOpen && (
                     <div
-                      style={{ borderRadius: "4px" }}
-                      className="border absolute bg-gray-200 border-gray-200 w-40 ml-8 mt-3 text-nowrap"
+                      style={{ borderRadius: "4px", zIndex: 1000 }}
+                      className="border absolute bg-white border-gray-300 w-40 ml-8 mt-3 text-nowrap"
                     >
-                      <ul>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <ul className="m-2">
+                        <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                          Products
+                        </li>
+                        <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                          Invoice
+                        </li>
+                        <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                          Setting
+                        </li>
+                        <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                          Download History
+                        </li>
+                        <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                          Login History
+                        </li>
+                        <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
                           Logout
-                        </li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                          Settings
-                        </li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                          Home
-                        </li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                          Change Password
                         </li>
                       </ul>
                     </div>
@@ -271,7 +320,7 @@ const MainNav = () => {
                     viewBox="0 0 24 24"
                   >
                     <path
-                      fill="white"
+                      fill="#4B5563"
                       d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1"
                     />
                   </svg>
@@ -283,25 +332,25 @@ const MainNav = () => {
         <div
           class={
             isNavVisible
-              ? "navbar-menu z-50 fixed top-0 flex xl:hidden flex-col justify-between bg-gray-900 max-w-xs w-11/12 h-full overflow-y-auto"
-              : "navbar-menu z-50 fixed top-0 hidden xl:hidden flex-col justify-between bg-gray-900 max-w-xs w-9/12 h-full overflow-y-auto"
+              ? "navbar-menu z-50 fixed top-0 flex xl:hidden flex-col justify-between bg-white max-w-xs w-11/12 h-full overflow-y-auto custom-scrollbar"
+              : "navbar-menu z-50 fixed top-0 hidden xl:hidden flex-col justify-between bg-white max-w-xs w-9/12 h-full overflow-y-auto custom-scrollbar"
           }
         >
-          <div class="navbar-backdrop fixed xl:hidden inset-0 bg-gray-900 opacity-60"></div>
-          <div class="relative bg-gray-900 flex-1">
-            <div class="fixed flex justify-between -left-4 p-8 pl-12 max-w-xs w-11/12 z-50 bg-gray-900">
-              <span class="block  max-w-max" href="#">
+          <div class="navbar-backdrop fixed xl:hidden inset-0 bg-white opacity-60"></div>
+          <div class="relative bg-white flex-1 border-gray-700 border-b">
+            <div class="fixed flex justify-between -left-1 p-4 pl-6 -my-4  max-w-xs w-11/12 z-50 bg-gray-50">
+              <span class="block mt-5  max-w-max" href="#">
                 <img
-                  src="/img/examprince_white_svg.svg"
+                  src="/img/examprince_dark_svg.svg"
                   alt=""
                   height={"170px"}
                   width={"170px"}
                 />
               </span>
-              <div class="w-auto">
+              <div class="w-auto pr-3 pt-1 -mb-2">
                 <button
                   onClick={closeNav}
-                  class="text-gray-500 hover:text-gray-600 -mr-4 pb-3"
+                  class="text-gray-500 hover:text-gray-600 -mr-4 mt-3"
                   href="#"
                 >
                   <svg
@@ -313,7 +362,7 @@ const MainNav = () => {
                     <g fill="none" fill-rule="evenodd">
                       <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
                       <path
-                        fill="white"
+                        fill="#4B5563"
                         d="m12 14.122l5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z"
                       />
                     </g>
@@ -321,81 +370,154 @@ const MainNav = () => {
                 </button>
               </div>
             </div>
-            <div class="mt-28">
+
+            <div class="mt-20 custom-scrollbar">
               <p class="px-8 mb-2 text-xs font-medium text-gray-500 uppercase">
                 Main menu
               </p>
               <ul class="px-4 mb-8">
                 <li>
                   <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
-                    href="#"
+                    class={
+                      showVendors
+                        ? "p-3 py-4 flex items-center justify-between text-green-500 bg-gray-100 rounded-md"
+                        : "p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
+                    }
+                    onClick={() => setShowVendors(!showVendors)}
                   >
                     <div class="flex items-center">
                       <svg
-                        class="mr-2"
-                        width="24"
-                        height="24"
-                        viewbox="0 0 24 24"
-                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        width="2em"
+                        height="1.8em"
+                        viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 6C11.7348 6 11.4804 6.10536 11.2929 6.29289C11.1054 6.48043 11 6.73478 11 7V17C11 17.2652 11.1054 17.5196 11.2929 17.7071C11.4804 17.8946 11.7348 18 12 18C12.2652 18 12.5196 17.8946 12.7071 17.7071C12.8946 17.5196 13 17.2652 13 17V7C13 6.73478 12.8946 6.48043 12.7071 6.29289C12.5196 6.10536 12.2652 6 12 6ZM7 12C6.73478 12 6.48043 12.1054 6.29289 12.2929C6.10536 12.4804 6 12.7348 6 13V17C6 17.2652 6.10536 17.5196 6.29289 17.7071C6.48043 17.8946 6.73478 18 7 18C7.26522 18 7.51957 17.8946 7.70711 17.7071C7.89464 17.5196 8 17.2652 8 17V13C8 12.7348 7.89464 12.4804 7.70711 12.2929C7.51957 12.1054 7.26522 12 7 12ZM17 10C16.7348 10 16.4804 10.1054 16.2929 10.2929C16.1054 10.4804 16 10.7348 16 11V17C16 17.2652 16.1054 17.5196 16.2929 17.7071C16.4804 17.8946 16.7348 18 17 18C17.2652 18 17.5196 17.8946 17.7071 17.7071C17.8946 17.5196 18 17.2652 18 17V11C18 10.7348 17.8946 10.4804 17.7071 10.2929C17.5196 10.1054 17.2652 10 17 10ZM19 2H5C4.20435 2 3.44129 2.31607 2.87868 2.87868C2.31607 3.44129 2 4.20435 2 5V19C2 19.7956 2.31607 20.5587 2.87868 21.1213C3.44129 21.6839 4.20435 22 5 22H19C19.7956 22 20.5587 21.6839 21.1213 21.1213C21.6839 20.5587 22 19.7956 22 19V5C22 4.20435 21.6839 3.44129 21.1213 2.87868C20.5587 2.31607 19.7956 2 19 2ZM20 19C20 19.2652 19.8946 19.5196 19.7071 19.7071C19.5196 19.8946 19.2652 20 19 20H5C4.73478 20 4.48043 19.8946 4.29289 19.7071C4.10536 19.5196 4 19.2652 4 19V5C4 4.73478 4.10536 4.48043 4.29289 4.29289C4.48043 4.10536 4.73478 4 5 4H19C19.2652 4 19.5196 4.10536 19.7071 4.29289C19.8946 4.48043 20 4.73478 20 5V19Z"
-                          fill="currentColor"
-                        ></path>
+                        <g fill="none">
+                          <path
+                            fill="currentColor"
+                            d="m15 22l-.555.832A1 1 0 0 0 16 22zm-3-2l.555-.832a1 1 0 0 0-1.11 0zm-3 2H8a1 1 0 0 0 1.555.832zM8.75 3.537l-.08.997zm1.685-.697l-.762-.648zM6.532 5.686l-.997.08zm2.154-2.154l.08-.997zM5.84 7.435l.648.761zm.697-1.684l.997-.08zm-.747 4.772l-.648.762zm0-3.046l-.648-.762zm.747 4.772l-.997-.08zm-.697-1.684l.648-.761zm2.846 3.903l.08.997zm-2.154-2.154l.997.08zm3.903 2.846l.761-.648zm-1.684-.697l-.08-.997zm4.772.747l.762.648zm-3.046 0l-.762.648zm4.772-.747l.08-.997zm-1.684.697l-.761-.648zm3.903-2.846l.997-.08zm-2.154 2.154l-.08.997zm2.846-3.903l.648.762zm-.697 1.684l-.997.08zm.747-4.772l.648-.762zm0 3.046l-.648-.761zm-.747-4.772l-.997-.08zm.697 1.684l-.648.761zm-2.846-3.903l-.08-.997zm2.154 2.154l.997.08zM13.565 2.84l.762-.648zm1.684.697l.08.997zm-1.726-.747l-.761.648zm-3.046 0l.761.648zM9 14.458l.044-.999zm6.555 6.71l-3-2l-1.11 1.664l3 2zm-4.11-2l-3 2l1.11 1.664l3-2zm1.317-15.73l.042.05l1.523-1.296l-.042-.05zm2.567 1.096l.065-.005l-.16-1.994l-.065.005zm1.142 1.072l-.005.065l1.994.16l.005-.065zm1.041 2.59l.05.042l1.296-1.523l-.05-.042zm.05 1.566l-.05.042l1.296 1.523l.05-.042zm-1.096 2.567l.005.065l1.994-.16l-.005-.065zm-1.072 1.142l-.065-.005l-.16 1.994l.065.005zm-2.59 1.041l-.042.05l1.523 1.296l.042-.05zm-1.566.05l-.042-.05l-1.523 1.296l.042.05zm-2.567-1.096l-.065.005l.16 1.994l.065-.005zm-1.142-1.072l.005-.065l-1.994-.16l-.005.065zm-1.041-2.59l-.05-.042l-1.296 1.523l.05.042zm-.05-1.566l.05-.042l-1.296-1.523l-.05.042zm1.096-2.567l-.005-.065l-1.994.16l.005.065zm1.072-1.142l.065.005l.16-1.994l-.065-.005zm2.59-1.041l.042-.05l-1.523-1.296l-.042.05zM8.671 4.534a3 3 0 0 0 2.525-1.046L9.673 2.192a1 1 0 0 1-.842.348zM7.529 5.606a1 1 0 0 1 1.077-1.077l.16-1.994a3 3 0 0 0-3.23 3.231zm-1.041 2.59a3 3 0 0 0 1.046-2.525l-1.994.16a1 1 0 0 1-.348.842zm-.05 1.566a1 1 0 0 1 0-1.524L5.142 6.715a3 3 0 0 0 0 4.57zm1.096 2.567a3 3 0 0 0-1.046-2.525l-1.296 1.523a1 1 0 0 1 .348.842zm1.072 1.142a1 1 0 0 1-1.077-1.077l-1.994-.16a3 3 0 0 0 3.231 3.23zm4.156 1.09a1 1 0 0 1-1.524 0l-1.523 1.297a3 3 0 0 0 4.57 0zm3.71-2.167a1 1 0 0 1-1.078 1.077l-.16 1.994a3 3 0 0 0 3.23-3.231zm1.04-2.59a3 3 0 0 0-1.046 2.525l1.994-.16a1 1 0 0 1 .348-.842zm.05-1.566a1 1 0 0 1 0 1.524l1.296 1.523a3 3 0 0 0 0-4.57zm-1.096-2.567a3 3 0 0 0 1.046 2.525l1.296-1.523a1 1 0 0 1-.348-.842zm-1.072-1.142a1 1 0 0 1 1.077 1.077l1.994.16a3 3 0 0 0-3.231-3.23zm-2.59-1.041a3 3 0 0 0 2.525 1.046l-.16-1.994a1 1 0 0 1-.842-.348zm1.48-1.346a3 3 0 0 0-4.569 0l1.523 1.296a1 1 0 0 1 1.524 0zm-3.088 12.37a3 3 0 0 0-2.152-1.053l-.088 1.998a1 1 0 0 1 .717.351zM9.044 13.46a3.011 3.011 0 0 0-.373.007l.16 1.994a1 1 0 0 1 .125-.003zM10 22v-7.542H8V22zm5.33-8.534a3.012 3.012 0 0 0-.374-.007l.088 1.998a1 1 0 0 1 .125.003zm-.374-.007a3 3 0 0 0-2.152 1.053l1.523 1.296a1 1 0 0 1 .717-.35zm-.956 1V22h2v-7.542z"
+                          />
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m14 8l-3 3l-1-1"
+                          />
+                        </g>
                       </svg>
-                      <p class="text-white font-medium text-base">Dashboard</p>
-                    </div>
-                    <svg
-                      width="12"
-                      height="8"
-                      viewbox="0 0 12 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 1.17C10.8126 0.983753 10.5592 0.879211 10.295 0.879211C10.0308 0.879211 9.77737 0.983753 9.59001 1.17L6.00001 4.71L2.46001 1.17C2.27265 0.983753 2.0192 0.879211 1.75501 0.879211C1.49082 0.879211 1.23737 0.983753 1.05001 1.17C0.956281 1.26297 0.881887 1.37357 0.831118 1.49543C0.780349 1.61729 0.754211 1.74799 0.754211 1.88C0.754211 2.01202 0.780349 2.14272 0.831118 2.26458C0.881887 2.38644 0.956281 2.49704 1.05001 2.59L5.29001 6.83C5.38297 6.92373 5.49357 6.99813 5.61543 7.04889C5.73729 7.09966 5.868 7.1258 6.00001 7.1258C6.13202 7.1258 6.26273 7.09966 6.38459 7.04889C6.50645 6.99813 6.61705 6.92373 6.71001 6.83L11 2.59C11.0937 2.49704 11.1681 2.38644 11.2189 2.26458C11.2697 2.14272 11.2958 2.01202 11.2958 1.88C11.2958 1.74799 11.2697 1.61729 11.2189 1.49543C11.1681 1.37357 11.0937 1.26297 11 1.17Z"
-                        fill="#8896AB"
-                      ></path>
-                    </svg>
-                  </span>
-                </li>
-                <li>
-                  <span
-                    class="p-3 pl-11 flex items-center justify-between"
-                    href="#"
-                  >
-                    <div class="flex items-center">
-                      <p class="text-white font-medium text-base">Overview</p>
-                    </div>
-                  </span>
-                </li>
-                <li>
-                  <span
-                    class="p-3 pl-11 flex items-center justify-between"
-                    href="#"
-                  >
-                    <div class="flex items-center">
-                      <p class="text-gray-500 font-medium text-base">
-                        Notifications
+                      <p class="text-gray-700 font-medium text-base">
+                        Vendors / Certifications
                       </p>
                     </div>
+                    {showVendors ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1.5em"
+                        height="1.5em"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="4"
+                          d="m13 30l12-12l12 12"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1.5em"
+                        height="1.5em"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="4"
+                          d="M36 18L24 30L12 18"
+                        />
+                      </svg>
+                    )}
                   </span>
                 </li>
+                {showVendors && (
+                  <>
+                    <li>
+                      <Link href={"/cisco"}>
+                        <span class="p-3 pl-11 flex items-center justify-between">
+                          <div class="flex items-center">
+                            <p class="text-gray-700 font-medium text-base hover:text-green-500">
+                              Cisco
+                            </p>
+                          </div>
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/microsoft"}>
+                        <span class="p-3 pl-11 flex items-center justify-between">
+                          <div class="flex items-center">
+                            <p class="text-gray-700 font-medium text-base hover:text-green-500">
+                              Microsoft
+                            </p>
+                          </div>
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/pmi"}>
+                        <span class="p-3 pl-11 flex items-center justify-between">
+                          <div class="flex items-center">
+                            <p class="text-gray-700 font-medium text-base hover:text-green-500">
+                              Pmi
+                            </p>
+                          </div>
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/amazon"}>
+                        <span class="p-3 pl-11 flex items-center justify-between">
+                          <div class="flex items-center">
+                            <p class="text-gray-700 font-medium text-base hover:text-green-500">
+                              Amazon
+                            </p>
+                          </div>
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/comptia"}>
+                        <span class="p-3 pl-11 flex items-center justify-between">
+                          <div class="flex items-center">
+                            <p class="text-gray-700 font-medium text-base hover:text-green-500">
+                              CompTIA
+                            </p>
+                          </div>
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/dell"}>
+                        <span class="p-3 pl-11 flex items-center justify-between">
+                          <div class="flex items-center">
+                            <p class="text-gray-700 font-medium text-base hover:text-green-500">
+                              Dell
+                            </p>
+                          </div>
+                        </span>
+                      </Link>
+                    </li>
+                  </>
+                )}
                 <li>
                   <span
-                    class="p-3 pl-11 flex items-center justify-between"
-                    href="#"
-                  >
-                    <div class="flex items-center">
-                      <p class="text-gray-500 font-medium text-base">Budget</p>
-                    </div>
-                  </span>
-                </li>
-                <li>
-                  <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
+                    class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                     href="#"
                   >
                     <div class="flex items-center">
@@ -412,36 +534,16 @@ const MainNav = () => {
                           fill="currentColor"
                         ></path>
                       </svg>
-                      <p class="text-white font-medium text-base">Projects</p>
+                      <p class="text-gray-700 font-medium text-base">
+                        Video Courses
+                      </p>
                     </div>
                   </span>
                 </li>
+
                 <li>
                   <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
-                    href="#"
-                  >
-                    <div class="flex items-center">
-                      <svg
-                        class="mr-2"
-                        width="24"
-                        height="24"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.21 14.75C10.303 14.8437 10.4136 14.9181 10.5354 14.9689C10.6573 15.0197 10.788 15.0458 10.92 15.0458C11.052 15.0458 11.1827 15.0197 11.3046 14.9689C11.4264 14.9181 11.537 14.8437 11.63 14.75L15.71 10.67C15.8983 10.4817 16.0041 10.2263 16.0041 9.96C16.0041 9.6937 15.8983 9.4383 15.71 9.25C15.5217 9.0617 15.2663 8.95591 15 8.95591C14.7337 8.95591 14.4783 9.0617 14.29 9.25L10.92 12.63L9.71 11.41C9.5217 11.2217 9.2663 11.1159 9 11.1159C8.7337 11.1159 8.4783 11.2217 8.29 11.41C8.1017 11.5983 7.99591 11.8537 7.99591 12.12C7.99591 12.3863 8.1017 12.6417 8.29 12.83L10.21 14.75ZM21 2H3C2.73478 2 2.48043 2.10536 2.29289 2.29289C2.10536 2.48043 2 2.73478 2 3V21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21V3C22 2.73478 21.8946 2.48043 21.7071 2.29289C21.5196 2.10536 21.2652 2 21 2ZM20 20H4V4H20V20Z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                      <p class="text-white font-medium text-base">Tasks</p>
-                    </div>
-                  </span>
-                </li>
-                <li>
-                  <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
+                    class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                     href="#"
                   >
                     <div class="flex items-center">
@@ -458,7 +560,9 @@ const MainNav = () => {
                           fill="currentColor"
                         ></path>
                       </svg>
-                      <p class="text-white font-medium text-base">Products</p>
+                      <p class="text-gray-700 font-medium text-base">
+                        Unlimited Access
+                      </p>
                     </div>
                   </span>
                 </li>
@@ -469,7 +573,7 @@ const MainNav = () => {
               <ul class="px-4 pb-8">
                 <li>
                   <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
+                    class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                     href="#"
                   >
                     <div class="flex items-center">
@@ -486,123 +590,70 @@ const MainNav = () => {
                           fill="currentColor"
                         ></path>
                       </svg>
-                      <p class="text-white font-medium text-base">Community</p>
+                      <p class="text-gray-700 font-medium text-base">
+                        Customer Support
+                      </p>
+                    </div>
+                  </span>
+                </li>
+
+                <li>
+                  <span
+                    class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
+                    href="#"
+                  >
+                    <div class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mr-2"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12.005 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-6.383-2.302l-.244-.209l.901-1.902a8 8 0 1 0-2.27-5.837l-.004.25h2.5l-2.706 5.716A9.954 9.954 0 0 1 2.005 12c0-5.523 4.477-10 10-10m1 4v2h2.5v2h-5.5a.5.5 0 0 0-.09.992l.09.008h4a2.5 2.5 0 0 1 0 5h-1v2h-2v-2h-2.5v-2h5.5a.5.5 0 0 0 .09-.992l-.09-.008h-4a2.5 2.5 0 1 1 0-5h1V6z"
+                        />
+                      </svg>
+                      <p class="text-gray-700 font-medium text-base">
+                        Refund Policy
+                      </p>
                     </div>
                   </span>
                 </li>
                 <li>
                   <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
+                    class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                     href="#"
                   >
                     <div class="flex items-center">
                       <svg
+                        xmlns="http://www.w3.org/2000/svg"
                         class="mr-2"
                         width="24"
                         height="24"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 2048 2048"
                       >
                         <path
-                          d="M12 19C12.1978 19 12.3911 18.9414 12.5556 18.8315C12.72 18.7216 12.8482 18.5654 12.9239 18.3827C12.9996 18.2 13.0194 17.9989 12.9808 17.8049C12.9422 17.6109 12.847 17.4327 12.7071 17.2929C12.5673 17.153 12.3891 17.0578 12.1951 17.0192C12.0011 16.9806 11.8 17.0004 11.6173 17.0761C11.4346 17.1518 11.2784 17.28 11.1685 17.4444C11.0586 17.6089 11 17.8022 11 18C11 18.2652 11.1054 18.5196 11.2929 18.7071C11.4804 18.8946 11.7348 19 12 19ZM17 19C17.1978 19 17.3911 18.9414 17.5556 18.8315C17.72 18.7216 17.8482 18.5654 17.9239 18.3827C17.9996 18.2 18.0194 17.9989 17.9808 17.8049C17.9422 17.6109 17.847 17.4327 17.7071 17.2929C17.5673 17.153 17.3891 17.0578 17.1951 17.0192C17.0011 16.9806 16.8 17.0004 16.6173 17.0761C16.4346 17.1518 16.2784 17.28 16.1685 17.4444C16.0586 17.6089 16 17.8022 16 18C16 18.2652 16.1054 18.5196 16.2929 18.7071C16.4804 18.8946 16.7348 19 17 19ZM17 15C17.1978 15 17.3911 14.9414 17.5556 14.8315C17.72 14.7216 17.8482 14.5654 17.9239 14.3827C17.9996 14.2 18.0194 13.9989 17.9808 13.8049C17.9422 13.6109 17.847 13.4327 17.7071 13.2929C17.5673 13.153 17.3891 13.0578 17.1951 13.0192C17.0011 12.9806 16.8 13.0004 16.6173 13.0761C16.4346 13.1518 16.2784 13.28 16.1685 13.4444C16.0586 13.6089 16 13.8022 16 14C16 14.2652 16.1054 14.5196 16.2929 14.7071C16.4804 14.8946 16.7348 15 17 15ZM12 15C12.1978 15 12.3911 14.9414 12.5556 14.8315C12.72 14.7216 12.8482 14.5654 12.9239 14.3827C12.9996 14.2 13.0194 13.9989 12.9808 13.8049C12.9422 13.6109 12.847 13.4327 12.7071 13.2929C12.5673 13.153 12.3891 13.0578 12.1951 13.0192C12.0011 12.9806 11.8 13.0004 11.6173 13.0761C11.4346 13.1518 11.2784 13.28 11.1685 13.4444C11.0586 13.6089 11 13.8022 11 14C11 14.2652 11.1054 14.5196 11.2929 14.7071C11.4804 14.8946 11.7348 15 12 15ZM19 3H18V2C18 1.73478 17.8946 1.48043 17.7071 1.29289C17.5196 1.10536 17.2652 1 17 1C16.7348 1 16.4804 1.10536 16.2929 1.29289C16.1054 1.48043 16 1.73478 16 2V3H8V2C8 1.73478 7.89464 1.48043 7.70711 1.29289C7.51957 1.10536 7.26522 1 7 1C6.73478 1 6.48043 1.10536 6.29289 1.29289C6.10536 1.48043 6 1.73478 6 2V3H5C4.20435 3 3.44129 3.31607 2.87868 3.87868C2.31607 4.44129 2 5.20435 2 6V20C2 20.7956 2.31607 21.5587 2.87868 22.1213C3.44129 22.6839 4.20435 23 5 23H19C19.7956 23 20.5587 22.6839 21.1213 22.1213C21.6839 21.5587 22 20.7956 22 20V6C22 5.20435 21.6839 4.44129 21.1213 3.87868C20.5587 3.31607 19.7956 3 19 3ZM20 20C20 20.2652 19.8946 20.5196 19.7071 20.7071C19.5196 20.8946 19.2652 21 19 21H5C4.73478 21 4.48043 20.8946 4.29289 20.7071C4.10536 20.5196 4 20.2652 4 20V11H20V20ZM20 9H4V6C4 5.73478 4.10536 5.48043 4.29289 5.29289C4.48043 5.10536 4.73478 5 5 5H6V6C6 6.26522 6.10536 6.51957 6.29289 6.70711C6.48043 6.89464 6.73478 7 7 7C7.26522 7 7.51957 6.89464 7.70711 6.70711C7.89464 6.51957 8 6.26522 8 6V5H16V6C16 6.26522 16.1054 6.51957 16.2929 6.70711C16.4804 6.89464 16.7348 7 17 7C17.2652 7 17.5196 6.89464 17.7071 6.70711C17.8946 6.51957 18 6.26522 18 6V5H19C19.2652 5 19.5196 5.10536 19.7071 5.29289C19.8946 5.48043 20 5.73478 20 6V9ZM7 15C7.19778 15 7.39112 14.9414 7.55557 14.8315C7.72002 14.7216 7.84819 14.5654 7.92388 14.3827C7.99957 14.2 8.01937 13.9989 7.98079 13.8049C7.9422 13.6109 7.84696 13.4327 7.70711 13.2929C7.56725 13.153 7.38907 13.0578 7.19509 13.0192C7.00111 12.9806 6.80004 13.0004 6.61732 13.0761C6.43459 13.1518 6.27841 13.28 6.16853 13.4444C6.05865 13.6089 6 13.8022 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15ZM7 19C7.19778 19 7.39112 18.9414 7.55557 18.8315C7.72002 18.7216 7.84819 18.5654 7.92388 18.3827C7.99957 18.2 8.01937 17.9989 7.98079 17.8049C7.9422 17.6109 7.84696 17.4327 7.70711 17.2929C7.56725 17.153 7.38907 17.0578 7.19509 17.0192C7.00111 16.9806 6.80004 17.0004 6.61732 17.0761C6.43459 17.1518 6.27841 17.28 6.16853 17.4444C6.05865 17.6089 6 17.8022 6 18C6 18.2652 6.10536 18.5196 6.29289 18.7071C6.48043 18.8946 6.73478 19 7 19Z"
                           fill="currentColor"
-                        ></path>
+                          d="M453 512q110-123 258-189t313-67q32 0 64 3t64 8v130q-32-6-64-9t-64-4q-104 0-200 33t-180 95zm1198 640q6-32 9-64t4-64q0-32-3-64t-10-64h130q5 32 8 64t3 64t-3 64t-8 64zM515 1408q45 60 102 107t122 81t138 50t147 18q32 0 64-3t64-10v130q-32 5-64 8t-64 3q-103 0-200-26t-183-77t-158-121t-123-160zM2048 128v640h-768V128zm-128 128h-512v384h512zm-640 1024h768v640h-768zm128 512h512v-384h-512zm-640-512H0V640h768zM640 768H128v384h512z"
+                        />
                       </svg>
-                      <p class="text-white font-medium text-base">Calendar</p>
-                    </div>
-                  </span>
-                </li>
-                <li>
-                  <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
-                    href="#"
-                  >
-                    <div class="flex items-center">
-                      <svg
-                        class="mr-2"
-                        width="24"
-                        height="24"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M20 8.94C19.9896 8.84813 19.9695 8.75763 19.94 8.67V8.58C19.8919 8.47718 19.8278 8.38267 19.75 8.3V8.3L13.75 2.3C13.6673 2.22222 13.5728 2.15808 13.47 2.11H13.38C13.2784 2.05174 13.1662 2.01434 13.05 2H7C6.20435 2 5.44129 2.31607 4.87868 2.87868C4.31607 3.44129 4 4.20435 4 5V19C4 19.7956 4.31607 20.5587 4.87868 21.1213C5.44129 21.6839 6.20435 22 7 22H17C17.7956 22 18.5587 21.6839 19.1213 21.1213C19.6839 20.5587 20 19.7956 20 19V9C20 9 20 9 20 8.94ZM14 5.41L16.59 8H15C14.7348 8 14.4804 7.89464 14.2929 7.70711C14.1054 7.51957 14 7.26522 14 7V5.41ZM18 19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20H7C6.73478 20 6.48043 19.8946 6.29289 19.7071C6.10536 19.5196 6 19.2652 6 19V5C6 4.73478 6.10536 4.48043 6.29289 4.29289C6.48043 4.10536 6.73478 4 7 4H12V7C12 7.79565 12.3161 8.55871 12.8787 9.12132C13.4413 9.68393 14.2044 10 15 10H18V19Z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                      <p class="text-white font-medium text-base">Pages</p>
-                    </div>
-                    <svg
-                      width="12"
-                      height="8"
-                      viewbox="0 0 12 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 1.17C10.8126 0.983753 10.5592 0.879211 10.295 0.879211C10.0308 0.879211 9.77737 0.983753 9.59001 1.17L6.00001 4.71L2.46001 1.17C2.27265 0.983753 2.0192 0.879211 1.75501 0.879211C1.49082 0.879211 1.23737 0.983753 1.05001 1.17C0.956281 1.26297 0.881887 1.37357 0.831118 1.49543C0.780349 1.61729 0.754211 1.74799 0.754211 1.88C0.754211 2.01202 0.780349 2.14272 0.831118 2.26458C0.881887 2.38644 0.956281 2.49704 1.05001 2.59L5.29001 6.83C5.38297 6.92373 5.49357 6.99813 5.61543 7.04889C5.73729 7.09966 5.868 7.1258 6.00001 7.1258C6.13202 7.1258 6.26273 7.09966 6.38459 7.04889C6.50645 6.99813 6.61705 6.92373 6.71001 6.83L11 2.59C11.0937 2.49704 11.1681 2.38644 11.2189 2.26458C11.2697 2.14272 11.2958 2.01202 11.2958 1.88C11.2958 1.74799 11.2697 1.61729 11.2189 1.49543C11.1681 1.37357 11.0937 1.26297 11 1.17Z"
-                        fill="#8896AB"
-                      ></path>
-                    </svg>
-                  </span>
-                </li>
-                <li>
-                  <span
-                    class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
-                    href="#"
-                  >
-                    <div class="flex items-center">
-                      <svg
-                        class="mr-2"
-                        width="24"
-                        height="24"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6 13H2C1.73478 13 1.48043 13.1054 1.29289 13.2929C1.10536 13.4804 1 13.7348 1 14V22C1 22.2652 1.10536 22.5196 1.29289 22.7071C1.48043 22.8946 1.73478 23 2 23H6C6.26522 23 6.51957 22.8946 6.70711 22.7071C6.89464 22.5196 7 22.2652 7 22V14C7 13.7348 6.89464 13.4804 6.70711 13.2929C6.51957 13.1054 6.26522 13 6 13ZM5 21H3V15H5V21ZM22 9H18C17.7348 9 17.4804 9.10536 17.2929 9.29289C17.1054 9.48043 17 9.73478 17 10V22C17 22.2652 17.1054 22.5196 17.2929 22.7071C17.4804 22.8946 17.7348 23 18 23H22C22.2652 23 22.5196 22.8946 22.7071 22.7071C22.8946 22.5196 23 22.2652 23 22V10C23 9.73478 22.8946 9.48043 22.7071 9.29289C22.5196 9.10536 22.2652 9 22 9ZM21 21H19V11H21V21ZM14 1H10C9.73478 1 9.48043 1.10536 9.29289 1.29289C9.10536 1.48043 9 1.73478 9 2V22C9 22.2652 9.10536 22.5196 9.29289 22.7071C9.48043 22.8946 9.73478 23 10 23H14C14.2652 23 14.5196 22.8946 14.7071 22.7071C14.8946 22.5196 15 22.2652 15 22V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1ZM13 21H11V3H13V21Z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                      <p class="text-white font-medium text-base">Analytics</p>
+                      <p class="text-gray-700 font-medium text-base">
+                        Test Engine
+                      </p>
                     </div>
                   </span>
                 </li>
               </ul>
               <div>
                 <p class="px-8 mb-2 text-xs font-medium text-gray-500 uppercase">
-                  Settings
+                  Account
                 </p>
-                <ul class="px-4 pb-28">
+                <ul class="px-4 pb-20">
                   <li>
                     <span
-                      class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
-                      href="#"
-                    >
-                      <div class="flex items-center">
-                        <svg
-                          class="mr-2"
-                          width="24"
-                          height="24"
-                          viewbox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14.81 12.28C15.443 11.6002 15.7996 10.7088 15.81 9.78C15.81 8.77748 15.4118 7.81602 14.7029 7.10714C13.994 6.39825 13.0325 6 12.03 6C11.0275 6 10.066 6.39825 9.35714 7.10714C8.64825 7.81602 8.25 8.77748 8.25 9.78C8.26044 10.7088 8.61702 11.6002 9.25 12.28C8.36865 12.7189 7.61022 13.3699 7.04292 14.1746C6.47561 14.9793 6.11723 15.9124 6 16.89C5.97083 17.1552 6.0482 17.4212 6.21511 17.6293C6.38202 17.8375 6.62478 17.9708 6.89 18C7.15522 18.0292 7.42116 17.9518 7.62932 17.7849C7.83749 17.618 7.97083 17.3752 8 17.11C8.11933 16.1411 8.58885 15.2494 9.32009 14.6027C10.0513 13.956 10.9938 13.599 11.97 13.599C12.9462 13.599 13.8887 13.956 14.6199 14.6027C15.3512 15.2494 15.8207 16.1411 15.94 17.11C15.9678 17.3664 16.0936 17.6022 16.2911 17.768C16.4887 17.9339 16.7426 18.017 17 18H17.11C17.3721 17.9698 17.6117 17.8373 17.7766 17.6313C17.9414 17.4252 18.0181 17.1624 17.99 16.9C17.8815 15.9276 17.5344 14.997 16.9796 14.191C16.4248 13.3851 15.6796 12.7286 14.81 12.28ZM12 11.56C11.6479 11.56 11.3038 11.4556 11.0111 11.26C10.7184 11.0644 10.4902 10.7864 10.3555 10.4612C10.2208 10.1359 10.1855 9.77803 10.2542 9.43274C10.3229 9.08745 10.4924 8.77029 10.7414 8.52135C10.9903 8.27241 11.3075 8.10288 11.6527 8.0342C11.998 7.96552 12.3559 8.00077 12.6812 8.13549C13.0064 8.27022 13.2844 8.49837 13.48 8.79109C13.6756 9.0838 13.78 9.42795 13.78 9.78C13.78 10.2521 13.5925 10.7048 13.2586 11.0387C12.9248 11.3725 12.4721 11.56 12 11.56ZM19 2H5C4.20435 2 3.44129 2.31607 2.87868 2.87868C2.31607 3.44129 2 4.20435 2 5V19C2 19.7956 2.31607 20.5587 2.87868 21.1213C3.44129 21.6839 4.20435 22 5 22H19C19.7956 22 20.5587 21.6839 21.1213 21.1213C21.6839 20.5587 22 19.7956 22 19V5C22 4.20435 21.6839 3.44129 21.1213 2.87868C20.5587 2.31607 19.7956 2 19 2ZM20 19C20 19.2652 19.8946 19.5196 19.7071 19.7071C19.5196 19.8946 19.2652 20 19 20H5C4.73478 20 4.48043 19.8946 4.29289 19.7071C4.10536 19.5196 4 19.2652 4 19V5C4 4.73478 4.10536 4.48043 4.29289 4.29289C4.48043 4.10536 4.73478 4 5 4H19C19.2652 4 19.5196 4.10536 19.7071 4.29289C19.8946 4.48043 20 4.73478 20 5V19Z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                        <p class="text-white font-medium text-base">Accounts</p>
-                      </div>
-                    </span>
-                  </li>
-                  <li>
-                    <span
-                      class="p-3 py-4 flex items-center justify-between text-gray-500 hover:text-green-500 hover:bg-gray-800 rounded-md"
+                      class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                       href="#"
                     >
                       <div class="flex items-center">
@@ -619,29 +670,128 @@ const MainNav = () => {
                             fill="currentColor"
                           ></path>
                         </svg>
-                        <p class="text-white font-medium text-base">Settings</p>
+                        <p class="text-gray-700 font-medium text-base">
+                          Settings
+                        </p>
+                      </div>
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
+                      href="#"
+                    >
+                      <div class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="mr-2"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 100 100"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m89.91 78.264l-9.178.007l8.211 9.67l-77.875.053l8.22-9.682l-9.188.008L.832 89.234A3.5 3.5 0 0 0 3.502 95l93-.064a3.5 3.5 0 0 0 2.666-5.766zM41.34 5v20.705H24.637L50 51.174l25.363-25.469H58.66V5zm30.912 32.324c-2.317 2.328-4.632 4.658-6.951 6.985h5l18.64 21.957l-77.873.052l18.686-22.01H34.7c-2.317-2.328-4.637-4.65-6.955-6.978a3.5 3.5 0 0 0-2.28 1.213L.833 67.559a3.5 3.5 0 0 0 2.67 5.765l93-.064a3.5 3.5 0 0 0 2.666-5.766L74.59 38.543a3.5 3.5 0 0 0-2.338-1.219"
+                            color="currentColor"
+                          />
+                        </svg>
+                        <p class="text-gray-700 font-medium text-base">
+                          Download History
+                        </p>
+                      </div>
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      class="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
+                      href="#"
+                    >
+                      <div class="flex items-center">
+                        <svg
+                          class="mr-2"
+                          width="24"
+                          height="24"
+                          viewbox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.81 12.28C15.443 11.6002 15.7996 10.7088 15.81 9.78C15.81 8.77748 15.4118 7.81602 14.7029 7.10714C13.994 6.39825 13.0325 6 12.03 6C11.0275 6 10.066 6.39825 9.35714 7.10714C8.64825 7.81602 8.25 8.77748 8.25 9.78C8.26044 10.7088 8.61702 11.6002 9.25 12.28C8.36865 12.7189 7.61022 13.3699 7.04292 14.1746C6.47561 14.9793 6.11723 15.9124 6 16.89C5.97083 17.1552 6.0482 17.4212 6.21511 17.6293C6.38202 17.8375 6.62478 17.9708 6.89 18C7.15522 18.0292 7.42116 17.9518 7.62932 17.7849C7.83749 17.618 7.97083 17.3752 8 17.11C8.11933 16.1411 8.58885 15.2494 9.32009 14.6027C10.0513 13.956 10.9938 13.599 11.97 13.599C12.9462 13.599 13.8887 13.956 14.6199 14.6027C15.3512 15.2494 15.8207 16.1411 15.94 17.11C15.9678 17.3664 16.0936 17.6022 16.2911 17.768C16.4887 17.9339 16.7426 18.017 17 18H17.11C17.3721 17.9698 17.6117 17.8373 17.7766 17.6313C17.9414 17.4252 18.0181 17.1624 17.99 16.9C17.8815 15.9276 17.5344 14.997 16.9796 14.191C16.4248 13.3851 15.6796 12.7286 14.81 12.28ZM12 11.56C11.6479 11.56 11.3038 11.4556 11.0111 11.26C10.7184 11.0644 10.4902 10.7864 10.3555 10.4612C10.2208 10.1359 10.1855 9.77803 10.2542 9.43274C10.3229 9.08745 10.4924 8.77029 10.7414 8.52135C10.9903 8.27241 11.3075 8.10288 11.6527 8.0342C11.998 7.96552 12.3559 8.00077 12.6812 8.13549C13.0064 8.27022 13.2844 8.49837 13.48 8.79109C13.6756 9.0838 13.78 9.42795 13.78 9.78C13.78 10.2521 13.5925 10.7048 13.2586 11.0387C12.9248 11.3725 12.4721 11.56 12 11.56ZM19 2H5C4.20435 2 3.44129 2.31607 2.87868 2.87868C2.31607 3.44129 2 4.20435 2 5V19C2 19.7956 2.31607 20.5587 2.87868 21.1213C3.44129 21.6839 4.20435 22 5 22H19C19.7956 22 20.5587 21.6839 21.1213 21.1213C21.6839 20.5587 22 19.7956 22 19V5C22 4.20435 21.6839 3.44129 21.1213 2.87868C20.5587 2.31607 19.7956 2 19 2ZM20 19C20 19.2652 19.8946 19.5196 19.7071 19.7071C19.5196 19.8946 19.2652 20 19 20H5C4.73478 20 4.48043 19.8946 4.29289 19.7071C4.10536 19.5196 4 19.2652 4 19V5C4 4.73478 4.10536 4.48043 4.29289 4.29289C4.48043 4.10536 4.73478 4 5 4H19C19.2652 4 19.5196 4.10536 19.7071 4.29289C19.8946 4.48043 20 4.73478 20 5V19Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <p class="text-gray-700 font-medium text-base">
+                          Login History
+                        </p>
                       </div>
                     </span>
                   </li>
                 </ul>
-                <div class="fixed bottom-0 -left-4 max-w-xs w-full flex flex-wrap items-center p-6 pl-10 justify-between bg-gray-900">
+                <div class="fixed bottom-0 -left-1 max-w-xs w-full -my-3 flex flex-wrap items-center p-6 pl-6 justify-between bg-gray-100">
                   <div class="w-auto">
-                    <div class="flex flex-wrap -mx-2">
+                    {/* <div className="mb-2">
+                      <Link
+                        href={"/login"}
+                        style={{
+                          padding: "6px",
+                          border: "2px solid #22C55E",
+                          width: "100%",
+                        }}
+                        className="hover:text-gray-700 w-full bg-green-500 text-white hover:bg-white"
+                      >
+                        <b>Login</b>
+                      </Link>
+                      <Link
+                        href={"/register"}
+                        style={{
+                          padding: "6px",
+                          border: "2px solid #22C55E",
+                          marginLeft: "4px",
+                        }}
+                        className="hover:text-green-500 text-gray-700 hover:bg-white"
+                      >
+                        <b>Register</b>
+                      </Link>
+                    </div> */}
+
+                    {/* <div class="flex flex-wrap -mx-3 -mb-1 -mt-4">
                       <div class="w-auto p-2">
                         <img src="/avatar.png" alt="" />
                       </div>
                       <div class="w-auto p-2">
-                        <h2 class="text-sm font-semibold text-white">
-                          John Doe
+                        <h2 class="text-sm font-bold text-gray-700">
+                          Ali Hussnain
                         </h2>
                         <p class="text-sm font-medium text-gray-500">
-                          johndoe@flex.co
+                          howrex95@gmail.com
+                        </p>
+                      </div>
+                    </div> */}
+                    <div class="flex flex-wrap -mx-3 -mb-1 -mt-4">
+                      <div class="w-auto p-2">
+                        <h2 class="text-base font-bold text-gray-500">
+                          <Link
+                            href={"/login"}
+                            className="text-green-500 hover:text-green-600 hover:underline font-bold underline-offset-2"
+                          >
+                            Login Now
+                          </Link>{" "}
+                        </h2>
+                        <p class="text-sm font-medium text-gray-500">
+                          Do not have an account?{" "}
+                          <Link
+                            href={"/register"}
+                            className="text-green-500 hover:text-green-600 hover:underline font-bold underline-offset-2"
+                          >
+                            Register
+                          </Link>{" "}
+                          Here.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="w-auto">
-                    <button
+                    {/* <button
                       onClick={closeNav}
                       class="text-gray-500 hover:text-gray-600"
                       href="#"
@@ -658,7 +808,7 @@ const MainNav = () => {
                           fill="currentColor"
                         ></path>
                       </svg>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
