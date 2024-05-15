@@ -16,9 +16,9 @@ export const RecentUpdatedExams = async () => {
 
   const data = await response.json();
   return (
-    <section class="py-14">
-      <div class="container mx-auto my-10 px-4">
-        <div className="px-5">
+    <section class="py-8">
+      <div class="container mx-auto my-4 px-4">
+        <div className="px-5 py-10 text-center">
           <Typography variant="h2" fontSize={38} fontWeight={600}>
             A Diverse Range of Courses
           </Typography>
@@ -30,10 +30,10 @@ export const RecentUpdatedExams = async () => {
         <Box
           sx={{
             width: "100%",
-            padding: "30px",
+            padding: "15px 30px 0px 30px",
             border: "1px solid gray",
             marginTop: "10px",
-            boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
+            boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.3)",
           }}
         >
           <Typography variant="h3" fontSize={32} fontWeight={600}>
@@ -50,7 +50,6 @@ export const RecentUpdatedExams = async () => {
           <button className="border-2 border-gray-800 bg-gray-700 text-white p-2">
             <b>View All Vendors</b>
           </button>
-          <br />
           <br />
           <br />
           <br />

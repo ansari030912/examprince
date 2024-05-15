@@ -6,7 +6,7 @@ import {
   CardMedia,
   Grid,
   Rating,
-  Typography
+  Typography,
 } from "@mui/material";
 import moment from "moment";
 import Carousel from "react-multi-carousel";
@@ -86,10 +86,10 @@ const RecentUpdateExamCard = ({ data }) => {
                 />
                 <CardContent className="bg-white">
                   <Typography
-                    className="hover:text-blue-500 cursor-pointer font-bold"
+                    className="hover:text-blue-500 cursor-pointer font-semibold"
                     gutterBottom
                     variant="h5"
-                    fontSize={20}
+                    fontSize={18}
                     component="div"
                   >
                     {truncateText(
@@ -111,37 +111,41 @@ const RecentUpdateExamCard = ({ data }) => {
                     }}
                   >
                     <div className="flex justify-between">
-                      <span className="font-bold text-xl">
+                      <span className="font-bold text-lg">
                         {truncateText(
                           `${exam_vendor_title}`,
                           7 // Set the maximum number of characters you want to display
                         )}
                       </span>{" "}
-                      <span className="font-bold text-xl text-blue-500">
+                      <span className="font-bold text-lg text-blue-500">
                         {moment(exam_update_date).format("DD MMM YYYY")}
                       </span>
                     </div>
                   </Typography>
                   <Typography
-                    variant="body2"
+                    variant="body1"
                     sx={{ display: "flex" }}
                     color="text.secondary"
+                    className="text-sm"
                   >
-                    <span className="text-xl font-bold border-2 rounded-lg px-1 bg-green-100">
+                    <span className="text-base font-bold border-2 rounded-lg px-1 bg-green-100">
                       5.0
                     </span>{" "}
-                    <Rating
-                      value={4.5}
-                      sx={{
-                        textAlign: "right",
-                        paddingTop: "3px",
-                        marginLeft: "2px",
-                      }}
-                      readOnly
-                    />
+                    <span className="text-sm">
+                      <Rating
+                        value={4.5}
+                        sx={{
+                          textAlign: "right",
+                          paddingTop: "2px",
+                          marginLeft: "2px",
+                        }}
+                        fontSize={12}
+                        readOnly
+                      />
+                    </span>
                   </Typography>
                 </CardContent>
-                <Box
+                {/* <Box
                   className="hover-card"
                   sx={{
                     display: "none",
@@ -168,7 +172,7 @@ const RecentUpdateExamCard = ({ data }) => {
                     {exam_title} Recently Updated and Certified by IT
                     Professionals
                   </Typography>
-                </Box>
+                </Box> */}
               </Box>
             </Grid>
           );
