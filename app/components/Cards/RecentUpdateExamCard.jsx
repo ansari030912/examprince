@@ -44,13 +44,7 @@ const truncateText = (text, maxChars) => {
 
 const RecentUpdateExamCard = ({ data }) => {
   return (
-    <Carousel
-      responsive={responsive}
-      customTransition="all 0.5s ease" // Added transition
-      transitionDuration={500} // Added transition duration
-      containerClass="carousel-container"
-      itemClass="carousel-item-padding-40-px"
-    >
+    <Grid container>
       {Array.isArray(data) &&
         data.map((item, index) => {
           const {
@@ -62,7 +56,15 @@ const RecentUpdateExamCard = ({ data }) => {
             exam_vendor_perma,
           } = item;
           return (
-            <Grid item key={exam_code} spacing={2} className="p-1">
+            <Grid
+              item
+              xs={12}
+              md={4}
+              lg={2.4}
+              key={exam_code}
+              spacing={2}
+              className="p-1"
+            >
               <Box
                 sx={{
                   position: "relative",
@@ -73,6 +75,7 @@ const RecentUpdateExamCard = ({ data }) => {
                     transition: "transform 0.3s ease, opacity 0.3s ease",
                   },
                 }}
+                className="border border-gray-300"
               >
                 <CardMedia
                   component="img"
@@ -80,7 +83,7 @@ const RecentUpdateExamCard = ({ data }) => {
                   image={exam_vendor_img}
                   alt={exam_title}
                   sx={{
-                    border: "2px solid #D1D1D1",
+                    borderBottom: "2px solid #D1D1D1",
                     marginRight: "2px",
                   }}
                 />
@@ -145,7 +148,7 @@ const RecentUpdateExamCard = ({ data }) => {
                     </span>
                   </Typography>
                 </CardContent>
-                {/* <Box
+                <Box
                   className="hover-card"
                   sx={{
                     display: "none",
@@ -172,12 +175,12 @@ const RecentUpdateExamCard = ({ data }) => {
                     {exam_title} Recently Updated and Certified by IT
                     Professionals
                   </Typography>
-                </Box> */}
+                </Box>
               </Box>
             </Grid>
           );
         })}
-    </Carousel>
+    </Grid>
   );
 };
 
