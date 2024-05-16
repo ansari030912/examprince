@@ -3,10 +3,7 @@ import React from "react";
 
 const FooterBar = () => {
   return (
-    <section
-      class="bg-white overflow-hidden border border-t"
-      //   style={{"background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"}}
-    >
+    <section class="bg-white overflow-hidden border border-t">
       <div class="container px-1 mx-auto">
         <div class="flex flex-wrap lg:items-center pt-12 pb-12 px-2 md:px-0 -mx-4">
           <div class="w-full md:w-3/4 px-4">
