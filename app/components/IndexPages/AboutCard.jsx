@@ -34,7 +34,7 @@ const AboutCard = () => {
       <div className="relative py-12 overflow-hidden">
         <div className="relative container mx-auto px-4">
           <Grid container spacing={3} className="flex justify-between -mx-4">
-            <Grid item xs={12} lg={4} className=" px-4 mb-2 lg:mb-0">
+            <Grid item xs={12} lg={4.5} className=" px-4 mb-2 lg:mb-0">
               <div className="px-4 md:px-8 py-9 bg-white">
                 <ul className="mb-5">
                   <li className="py-5 px-6 border-b">
@@ -166,7 +166,7 @@ const AboutCard = () => {
                 </div>{" "}
               </div>
             </Grid>
-            <Grid item xs={12} lg={8} className=" px-2">
+            <Grid item xs={12} lg={7.5} className=" px-2">
               <div className="flex flex-wrap h-full">
                 <div className="w-full">
                   <CustomCaresolTestEngine />

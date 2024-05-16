@@ -10,26 +10,27 @@ const HotExamCards = ({ data }) => {
   const [selectedView, setSelectedView] = useState("month");
 
   const renderRows = (items) => {
-    return items?.slice(0, 12)?.map((item, index) => {
+    return items?.slice(0, 10)?.map((item, index) => {
       const { vendor_title, exam_title, exam_perma, vendor_perma } = item;
       return (
         <Grid
           item
           xs={12}
-          md={6}
-          lg={4}
-          xl={3}
+          sm={6}
+          md={3}
+          lg={2.4}
+          xl={2.4}
           key={exam_perma}
-          className="w-full px-4 mb-4"
+          className="w-full px-2 mb-1"
         >
           <div
             className="bg-white"
             style={{
-              minHeight: "550px",
-              marginBottom: "2.5rem",
-              padding: "2rem",
+              minHeight: "330px",
+              marginBottom: "1rem",
+              padding: "1rem",
               boxShadow:
-                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+                "4px 4px 6px 1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
               borderRadius: "1rem",
               display: "flex",
               flexDirection: "column",
@@ -41,18 +42,17 @@ const HotExamCards = ({ data }) => {
               <div>
                 <img
                   src="/img/examprince_dark_svg.svg"
-                  width={"220px"}
+                  width={"120px"}
                   alt=""
                 />
-                <br />
-                <hr />
-                <span className="block text-xl text-gray-800 font-bold mt-6 mb-6">
+                <hr className="mt-2" />
+                <span className="block text-sm text-gray-800 font-bold mt-3 mb-6">
                   {exam_title}
                 </span>
               </div>
-              <div className="flex items-center mb-1">
+              <div className="flex justify-center mb-1">
                 <CardMedia>
-                  <img src="/img-1.png" alt="" />
+                  <img src="/img-1.png" width={"150px"} alt="" />
                 </CardMedia>
                 {/* <span className={`text-4xl`}>$129</span>
                 <span className={`hidden text-4xl `}>$258</span>
@@ -69,21 +69,20 @@ const HotExamCards = ({ data }) => {
               </div>
             </div>
             <div style={{ alignSelf: "stretch" }}>
-              {/* <hr /> */}
-              <p className="text-xl text-gray-700 font-bold mb-3">
+              <p className="text-sm text-gray-700 font-bold mb-2">
                 {vendor_title}
               </p>
-              <hr />
-              <br />
+              <hr className="mb-2" />
+
               <Link
                 href="#"
-                className="inline-flex group w-full py-4 px-6 items-center justify-center text-lg font-medium text-green-500 hover:text-white border border-green-500 hover:bg-green-500 rounded-full transition duration-200"
+                className="inline-flex group w-full -mb-1 py-2 px-2 items-center justify-center text-base font-medium text-green-500 hover:text-white border border-green-500 hover:bg-green-500 rounded-full transition duration-200"
               >
                 <span className="mr-2">Buy Now</span>
                 <span className="transform group-hover:translate-x-1 transition-transform duration-200">
                   <svg
-                    width="21"
-                    height="20"
+                    width="16"
+                    height="18"
                     viewBox="0 0 21 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -113,10 +112,13 @@ const HotExamCards = ({ data }) => {
   };
 
   return (
-    <section className="py-8 lg:py-14 bg-gray-50">
+    <section
+      // style={{ backgroundImage: `url('bg-img-2.jpg')` }}
+      className="py-8 lg:py-14 bg-cover"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">
-          <h1 className="font-heading text-5xl sm:text-6xl text-gray-700 mb-6">
+          <h1 className="font-heading sm:text-4xl text-gray-700 mb-6">
             Hot Exams
           </h1>
           <p className="text-lg text-gray-700 opacity-80">
@@ -125,24 +127,24 @@ const HotExamCards = ({ data }) => {
             budget.
           </p>
         </div>
-        <div className="flex md:flex-row flex-col mb-12 items-start md:items-center justify-center">
+        <div className="flex md:flex-row flex-col mb-12 items-center justify-center">
           <div>
             <div className="flex justify-center items-center">
               <span
                 style={{
                   boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
                 }}
-                className="inline-block mt-5 mr-5 md:mt-0 md:ml-6 px-4 py-4 text-lg leading-6 text-teal-800 font-medium bg-lime-50 rounded-full"
+                className="inline-block mt-5 mr-5 md:mt-0 md:ml-6 px-4 py-2 text-lg leading-6 text-teal-800 font-medium bg-lime-50 rounded-full"
               >
-                Monthly Hot Exams
+                Monthly
               </span>
-              <div className="relative flex h-5 px-0.5 items-center justify-between transition duration-200 ease-linear rounded-full bg-gray-200 shadow">
+              <div className="relative flex h-5 mt-5 md:mt-0 px-0.5 items-center justify-between transition duration-200 ease-linear rounded-full bg-gray-200 shadow">
                 <button
                   onClick={() => {
                     setToggle(!toggle);
                     setSelectedView(toggle ? "month" : "week");
                   }}
-                  className={`inline-block w-8 h-8 ${
+                  className={`inline-block w-4 h-4 ${
                     toggle ? "bg-transparent" : "bg-green-500"
                   } rounded-full`}
                 ></button>
@@ -151,23 +153,23 @@ const HotExamCards = ({ data }) => {
                     setToggle(!toggle);
                     setSelectedView(toggle ? "month" : "week");
                   }}
-                  className={`inline-block w-8 h-8 ${
+                  className={`inline-block w-4 h-4 ${
                     toggle ? "bg-green-500" : "bg-transparent"
                   } rounded-full`}
                 ></button>
               </div>
+              <span
+                style={{
+                  boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
+                }}
+                className="inline-block ml-6 mt-5 md:mt-0 md:ml-6 px-4 py-2 text-lg leading-6 text-teal-800 font-medium bg-lime-50 rounded-full"
+              >
+                Weekly
+              </span>
             </div>
           </div>
-          <span
-            style={{
-              boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
-            }}
-            className="inline-block mt-5 md:mt-0 md:ml-6 px-4 py-4 text-lg leading-6 text-teal-800 font-medium bg-lime-50 rounded-full"
-          >
-            Weekly Hot Exams
-          </span>
         </div>
-        <div className="max-w-sm mx-auto lg:max-w-none">
+        <div>
           <Grid container className="flex justify-center lg:justify-start">
             {selectedView === "week" && renderRows(data?.week)}
             {selectedView === "month" && renderRows(data?.month)}

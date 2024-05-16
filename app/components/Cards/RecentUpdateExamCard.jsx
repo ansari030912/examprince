@@ -1,186 +1,112 @@
-"use client";
-// components/Carousel.js
-import {
-  Box,
-  CardContent,
-  CardMedia,
-  Grid,
-  Rating,
-  Typography,
-} from "@mui/material";
+/* eslint-disable @next/next/no-img-element */
 import moment from "moment";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-    slidesToSlide: 5, // Move 5 items at a time
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-    slidesToSlide: 5, // Move 5 items at a time
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2, // Move 2 items at a time
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // Move 1 item at a time
-  },
-};
-
-const truncateText = (text, maxChars) => {
-  if (text.length > maxChars) {
-    return text.slice(0, maxChars) + "...";
-  }
-  return text;
-};
+import Link from "next/link";
 
 const RecentUpdateExamCard = ({ data }) => {
   return (
-    <Grid container>
-      {Array.isArray(data) &&
-        data.map((item, index) => {
-          const {
-            exam_vendor_title,
-            exam_title,
-            exam_update_date,
-            exam_code,
-            exam_vendor_img,
-            exam_vendor_perma,
-          } = item;
-          return (
-            <Grid
-              item
-              xs={12}
-              md={4}
-              lg={2.4}
-              key={exam_code}
-              spacing={2}
-              className="p-1"
-            >
-              <Box
-                sx={{
-                  position: "relative",
-                  "&:hover .hover-card": {
-                    display: "block",
-                    opacity: 1,
-                    transform: "translateX(0)",
-                    transition: "transform 0.3s ease, opacity 0.3s ease",
-                  },
-                }}
-                className="border border-gray-300"
-              >
-                <CardMedia
-                  component="img"
-                  height="120"
-                  image={exam_vendor_img}
-                  alt={exam_title}
-                  sx={{
-                    borderBottom: "2px solid #D1D1D1",
-                    marginRight: "2px",
-                  }}
-                />
-                <CardContent className="bg-white">
-                  <Typography
-                    className="hover:text-blue-500 cursor-pointer font-semibold"
-                    gutterBottom
-                    variant="h5"
-                    fontSize={18}
-                    component="div"
-                  >
-                    {truncateText(
-                      `${exam_title} Recently Updated and Certified by IT Professionals`,
-                      30 // Set the maximum number of characters you want to display
-                    )}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      lineHeight: "1.5rem", // Adjust line height as needed
-                      height: "3rem", // Ensure this is twice the line-height for 2 lines
-                    }}
-                  >
-                    <div className="flex justify-between">
-                      <span className="font-bold text-lg">
-                        {truncateText(
-                          `${exam_vendor_title}`,
-                          7 // Set the maximum number of characters you want to display
-                        )}
-                      </span>{" "}
-                      <span className="font-bold text-lg text-blue-500">
-                        {moment(exam_update_date).format("DD MMM YYYY")}
-                      </span>
-                    </div>
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{ display: "flex" }}
-                    color="text.secondary"
-                    className="text-sm"
-                  >
-                    <span className="text-base font-bold border-2 rounded-lg px-1 bg-green-100">
-                      5.0
-                    </span>{" "}
-                    <span className="text-sm">
-                      <Rating
-                        value={4.5}
-                        sx={{
-                          textAlign: "right",
-                          paddingTop: "2px",
-                          marginLeft: "2px",
+    <section>
+      <div class="container mx-auto">
+        <div>
+          <div class="overflow-x-auto custom-scrollbar">
+            <div class="inline-block w-full min-w-max overflow-hidden p-2">
+              <table class="table-auto w-full">
+                <tbody>
+                  {Array.isArray(data) &&
+                    data.slice(0, 10).map((item, index) => (
+                      <tr
+                        key={index}
+                        style={{
+                          borderRadius: "15px",
+
+                          boxShadow:
+                            index % 2 === 0
+                              ? "0px 0px 10px rgba(0, 0, 0, 0.1)"
+                              : "",
                         }}
-                        fontSize={12}
-                        readOnly
-                      />
-                    </span>
-                  </Typography>
-                </CardContent>
-                <Box
-                  className="hover-card"
-                  sx={{
-                    display: "none",
-                    position: "absolute",
-                    top: "10px",
-                    left: "10px",
-                    width: "210px",
-                    height: "auto",
-                    backgroundColor: "white",
-                    border: "1px solid #ccc",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    zIndex: 10,
-                    padding: "8px",
-                    borderRadius: "0px",
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    fontWeight={600}
-                    fontSize={18}
-                    gutterBottom
-                    color={"blue"}
-                  >
-                    {exam_title} Recently Updated and Certified by IT
-                    Professionals
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-          );
-        })}
-    </Grid>
+                      >
+                        <td class="p-0">
+                          {data ? (
+                            <div
+                              class={
+                                index % 2 === 0
+                                  ? "flex items-center pl-4 pr-4 h-20 bg-blueGray-50 border-l border-t border-b border-gray-100 bg-gray-50 rounded-tl-2xl rounded-bl-2xl"
+                                  : "flex items-center pl-4 pr-4 h-20 "
+                              }
+                            >
+                              <div class="flex items-center">
+                                <img
+                                  class="mr-4 h-8"
+                                  src={item?.exam_vendor_img}
+                                  alt=""
+                                />
+                                <div class="flex-shrink-1">
+                                  <h4 class="font-heading text-wrap font-medium leading-4 text-blue-400 hover:text-blue-600">
+                                    <Link
+                                      href={`/exam-questions/${item.exam_vendor_perma}/${item.exam_perma}`}
+                                      className="text-lg text-gray-600"
+                                    >
+                                      {item.exam_vendor_title} -{" "}
+                                      {item.exam_code}
+                                    </Link>
+                                    <br />
+                                    <Link
+                                      href={`/exam-questions/${item.exam_vendor_perma}/${item.exam_perma}`}
+                                      className="text-sm"
+                                    >
+                                      {item.exam_title}
+                                    </Link>
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="flex justify-start">
+                              <div class="p-4 max-w-sm w-full mx-auto">
+                                <div class="animate-pulse flex  space-x-4">
+                                  <div class="rounded-full bg-slate-500 h-10 w-10"></div>
+                                  <div class="flex-1 space-y-6 py-1">
+                                    <div class="h-2 bg-slate-500 rounded"></div>
+                                    <div class="space-y-3">
+                                      <div class="grid grid-cols-3 gap-4">
+                                        <div class="h-2 bg-slate-500 rounded col-span-2"></div>
+                                        <div class="h-2 bg-slate-500 rounded col-span-1"></div>
+                                      </div>
+                                      <div class="h-2 bg-slate-500 rounded"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </td>
+
+                        <td class="p-0 text-right">
+                          {data && (
+                            <div
+                              class={
+                                index % 2 === 0
+                                  ? "flex items-center justify-end p-5 h-20 text-right bg-blueGray-50 border-t border-b border-r rounded-tr-xl rounded-br-xl border-gray-100 bg-gray-50"
+                                  : "flex items-center justify-end p-5 h-20 text-right"
+                              }
+                            >
+                              <span class="py-2 pb-2 px-3 text-xs text-green-600 font-medium bg-green-200 rounded-full">
+                                {moment(item.exam_update_date).format(
+                                  "DD MMM YYYY"
+                                )}
+                              </span>
+                            </div>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
+            {/* <hr /> */}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

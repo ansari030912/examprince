@@ -1,3 +1,4 @@
+import FooterBar from "./Footer/FooterBar";
 import MainNav from "./Nav-bar/MainNav";
 import NavTop from "./Nav-bar/NavTop";
 import AboutCard from "./components/IndexPages/AboutCard";
@@ -16,6 +17,7 @@ export default function Home() {
       <RecentUpdatedExams />
       <AboutCard />
       <HotExams />
+      <FooterBar />
     </>
   );
 }
