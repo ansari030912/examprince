@@ -54,18 +54,6 @@ const HotExamCards = ({ data }) => {
                 <CardMedia>
                   <img src="/img-1.png" width={"150px"} alt="" />
                 </CardMedia>
-                {/* <span className={`text-4xl`}>$129</span>
-                <span className={`hidden text-4xl `}>$258</span>
-                <span className={`ml-4 text-xl font-medium text-gray-700 `}>
-                  per month
-                </span>
-                <span
-                  className={`hidden ml-4 text-xl font-medium text-gray-700 ${
-                    toggle ? "" : "hidden"
-                  }`}
-                >
-                  per annually
-                </span> */}
               </div>
             </div>
             <div style={{ alignSelf: "stretch" }}>

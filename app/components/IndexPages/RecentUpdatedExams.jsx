@@ -29,7 +29,6 @@ export const RecentUpdatedExams = async () => {
             in one secure platform.
           </p>
         </div>
-        {/* <hr className="mb-3"/> */}
         <div class="flex flex-wrap lg:items-center -mx-4">
           <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
             <div class="relative mx-auto lg:ml-0 max-w-max">

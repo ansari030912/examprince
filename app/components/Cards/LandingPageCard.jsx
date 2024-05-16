@@ -4,7 +4,7 @@
 const LandingPageCard = () => {
   return (
     <section
-      class="pb-6"
+      class="pb-6 bg-fixed"
       style={{
         backgroundImage: `url("/bg-img-3.jpg")`,
         backgroundSize: "cover",

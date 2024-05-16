@@ -30,3 +30,19 @@
   width: 0; /* Set width to 0 to hide the scrollbar */
   height: 0;
 }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-in-out forwards;
+  opacity: 1;
+}

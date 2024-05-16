@@ -35,7 +35,7 @@ const FooterBar = () => {
                   class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
                   href="#"
                 >
-                  Product
+                  Vendors & Certications
                 </a>
               </div>
               <div class="w-auto p-3 md:py-0 md:px-6">
@@ -43,7 +43,7 @@ const FooterBar = () => {
                   class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
                   href="#"
                 >
-                  Features
+                  Video Courses
                 </a>
               </div>
               <div class="w-auto p-3 md:py-0 md:px-6">
@@ -51,7 +51,7 @@ const FooterBar = () => {
                   class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
                   href="#"
                 >
-                  Pricing
+                  Unlimited Access
                 </a>
               </div>
               <div class="w-auto p-3 md:py-0 md:px-6">
@@ -59,7 +59,7 @@ const FooterBar = () => {
                   class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
                   href="#"
                 >
-                  Resources
+                  Privaacy Policy
                 </a>
               </div>
               <div class="w-auto p-3 md:py-0 md:px-6">
@@ -67,23 +67,7 @@ const FooterBar = () => {
                   class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
                   href="#"
                 >
-                  Careers
-                </a>
-              </div>
-              <div class="w-auto p-3 md:py-0 md:px-6">
-                <a
-                  class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
-                  href="#"
-                >
-                  Help
-                </a>
-              </div>
-              <div class="w-auto p-3 md:py-0 md:px-6">
-                <a
-                  class="inline-block text-coolGray-500 hover:text-coolGray-600 font-medium"
-                  href="#"
-                >
-                  Privacy
+                  Customer Support
                 </a>
               </div>
             </div>
@@ -102,7 +86,7 @@ const FooterBar = () => {
         <div class="flex flex-wrap items-center py-4 ">
           <div class="w-full md:w-1/2 mb-6 md:mb-0">
             <p class="text-gray-700 font-medium">
-              © 2021 Flex. All rights reserved.
+              © 2024 ExamPrince.com - All Rights Reserved
             </p>
           </div>
           <div class="w-full md:w-1/2">

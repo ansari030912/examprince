@@ -7,7 +7,7 @@ import CustomCaresolTestEngine from "../CustomCaresol/CustomCaresolTestEngine";
 const AboutCard = () => {
   return (
     <section
-      className=" py-12 bg-cover"
+      className=" py-12 bg-cover bg-fixed"
       style={{ backgroundImage: `url("/bg-img-1.jpg")` }}
     >
       <Typography
