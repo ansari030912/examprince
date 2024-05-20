@@ -292,8 +292,8 @@ export default function Home() {
       style={{ backgroundImage: `url('bg-img-8.jpg')` }}
       className="bg-fixed bg-cover"
     >
-      <div className="container mx-auto p-4 z-10 py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="container mx-auto p-4 z-10 pt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
           {exams.map((item, index) => (
             <Box
               key={index}
@@ -315,7 +315,7 @@ export default function Home() {
                     variant="h2"
                     fontSize={18}
                     sx={{ textAlign: "center" }}
-                    color="text.secondary"
+                    className="text-gray-800 font-bold"
                   >
                     {item.vendor}
                   </Typography>
@@ -325,13 +325,10 @@ export default function Home() {
                     fontSize={14}
                     fontWeight={600}
                     sx={{ textAlign: "center" }}
+                    className="text-gray-500"
                   >
                     {item.name}
                   </Typography>
-                  {/* <Typography variant="body2" color="text.secondary">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Typography> */}
                 </CardContent>
               </Card>
               <Avatar

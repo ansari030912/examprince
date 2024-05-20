@@ -26,7 +26,7 @@ const HotExamCards = ({ data }) => {
           <div
             className="bg-white"
             style={{
-              minHeight: "330px",
+              minHeight: "310px",
               marginBottom: "1rem",
               padding: "1rem",
               boxShadow:
@@ -40,13 +40,11 @@ const HotExamCards = ({ data }) => {
           >
             <div style={{ flexGrow: 1 }}>
               <div>
-                <img
-                  src="/img/examprince_dark_svg.svg"
-                  width={"120px"}
-                  alt=""
-                />
+                <p className="text-base text-gray-800 font-bold mb-2">
+                  {vendor_title}
+                </p>
                 <hr className="mt-2" />
-                <span className="block text-sm text-gray-800 font-bold mt-3 mb-6">
+                <span className="block text-sm text-gray-600 font-bold mt-3 mb-6">
                   {exam_title}
                 </span>
               </div>
@@ -57,11 +55,7 @@ const HotExamCards = ({ data }) => {
               </div>
             </div>
             <div style={{ alignSelf: "stretch" }}>
-              <p className="text-sm text-gray-700 font-bold mb-2">
-                {vendor_title}
-              </p>
               <hr className="mb-2" />
-
               <Link
                 href="#"
                 className="inline-flex group w-full -mb-1 py-2 px-2 items-center justify-center text-base font-medium text-green-500 hover:text-white border border-green-500 hover:bg-green-500 rounded-full transition duration-200"
@@ -101,8 +95,10 @@ const HotExamCards = ({ data }) => {
 
   return (
     <section
-      // style={{ backgroundImage: `url('bg-img-2.jpg')` }}
-      className="py-8 lg:py-14 bg-cover"
+      style={{ 
+        backgroundImage: `url('/bg-cut-4.png')`,
+      }}
+      className="py-8 lg:py-14 bg-cover "
     >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">

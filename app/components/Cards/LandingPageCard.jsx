@@ -29,22 +29,22 @@ const LandingPageCard = () => {
               </p>
             </div>
             <div class="flex flex-wrap">
-              <span class="inline-block px-6 py-4 mb-3 mr-4 text-sm font-medium leading-normal bg-blue-400 hover:bg-blue-500 text-white rounded transition duration-200">
+              <span class="inline-block px-6 py-4 mb-3 mr-4 text-base font-bold leading-normal bg-teal-400 hover:bg-teal-500 text-white rounded transition duration-200">
                 Latest Questions & Answers
               </span>
-              <span class="inline-block px-6 py-4 mb-3 mr-4 text-sm font-medium leading-normal bg-blue-400 hover:bg-blue-500 text-white rounded transition duration-200">
+              <span class="inline-block px-6 py-4 mb-3 mr-4 text-base font-bold leading-normal bg-green-400 hover:bg-green-500 text-white rounded transition duration-200">
                 Hight sucess rate
               </span>
-              <span class="inline-block px-6 py-4 mb-3 mr-4 text-sm font-medium leading-normal bg-blue-400 hover:bg-blue-500 text-white rounded transition duration-200">
+              <span class="inline-block px-6 py-4 mb-3 mr-4 text-base font-bold leading-normal bg-orange-400 hover:bg-orange-500 text-white rounded transition duration-200">
                 Quick availability
               </span>
-              <span class="inline-block px-6 py-4 mb-3 mr-4 text-sm font-medium leading-normal bg-blue-400 hover:bg-blue-500 text-white rounded transition duration-200">
+              <span class="inline-block px-6 py-4 mb-3 mr-4 text-base font-bold leading-normal bg-violet-400 hover:bg-violet-500 text-white rounded transition duration-200">
                 Instantly prepared access
               </span>
-              <span class="inline-block px-6 py-4 mb-3 mr-4 text-sm font-medium leading-normal bg-blue-400 hover:bg-blue-500 text-white rounded transition duration-200">
+              <span class="inline-block px-6 py-4 mb-3 mr-4 text-base font-bold leading-normal bg-red-400 hover:bg-red-500 text-white rounded transition duration-200">
                 Safe, Private, Reliable
               </span>
-              <span class="inline-block px-6 py-4 mb-3 mr-4 text-sm font-medium leading-normal bg-blue-400 hover:bg-blue-500 text-white rounded transition duration-200">
+              <span class="inline-block px-6 py-4 mb-3 mr-4 text-base font-bold leading-normal bg-stone-400 hover:bg-stone-500 text-white rounded transition duration-200">
                 Easy to refund
               </span>
             </div>
