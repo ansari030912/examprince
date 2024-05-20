@@ -1,6 +1,3 @@
-import FooterBar from "./Footer/FooterBar";
-import MainNav from "./Nav-bar/MainNav";
-import NavTop from "./Nav-bar/NavTop";
 import CertificationHomePageCard from "./components/Cards/CertificationHomePageCard";
 import SiteOverView from "./components/Cards/SiteOverView";
 import AboutCard from "./components/IndexPages/AboutCard";
@@ -12,8 +9,7 @@ import { RecentUpdatedExams } from "./components/IndexPages/RecentUpdatedExams";
 export default function Home() {
   return (
     <>
-      <NavTop />
-      <MainNav />
+     
       <LandingPageHeroSection />
       <LogoBanner />
       <RecentUpdatedExams />
@@ -21,7 +17,7 @@ export default function Home() {
       <HotExams />
       <SiteOverView />
       <CertificationHomePageCard />
-      <FooterBar />
+  
     </>
   );
 }
