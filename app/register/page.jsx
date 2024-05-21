@@ -1,7 +1,9 @@
+"use client";
+import loginAuth from "../auth/LoginAuth";
 import RegisterPage from "../components/IndexPages/RegisterPage";
 
 const page = () => {
   return <RegisterPage />;
 };
 
-export default page;
+export default loginAuth(page);

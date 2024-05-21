@@ -9,50 +9,58 @@ const CertificationMulitpleExams = ({ data }) => {
       <Grid container spacing={2}>
         <Grid item xs={12} lg={7}>
           <div>
-            <p class="text-xl mb-4 text-blue-600">{data?.exam_vendor_title}</p>
+            <p class="text-xl text-blue-600">{data?.exam_vendor_title}</p>
             <Grid container spacing={2} sx={{ mb: "10px" }}>
-              <Grid item xs={12} md={6}>
-                <h6 className="text-2xl text-gray-600 font-semibold">
-                  Safe Files
-                </h6>
-                <ol className="list-disc pl-4 text-sm mb-2 text-gray-500">
-                  <li>Guaranteed To Have Actual PDF</li>
-                </ol>
-                <hr style={{ border: "1px solid #F5F6FA" }} />
-                <h6 className="text-2xl text-gray-600 font-semibold">
+              <Grid item xs={12} sm={6}>
+                <h6 className="text-2xl text-gray-600 font-semibold text-center sm:text-left">
                   Material
                 </h6>
-                <ol className="list-disc pl-4 text-sm mb-2 text-gray-500">
+                <ol className="sm:list-disc pl-4 text-sm mb-2 text-gray-500 text-center sm:text-left">
                   <li> Verified By IT Certified Experts</li>
                   <li>100% Accurate Answers</li>
                   <li>100% Money Back Guarantee</li>
                   <li>Instant Downloads</li>
                   <li>Free Fast Exam Updates</li>
                 </ol>
-                <hr style={{ border: "1px solid #F5F6FA" }} />
+                {/* <hr style={{ border: "1px solid #F5F6FA" }} /> */}
               </Grid>
-              <Grid item xs={12} md={6}>
-                <h6 className="text-2xl text-gray-600 font-semibold">
-                  Exam Questions
+              <Grid item xs={12} sm={6}>
+                <h6 className="text-2xl text-gray-600 font-semibold text-center sm:text-left">
+                  PDF
                 </h6>
-                <ol className="list-disc pl-4 text-sm mb-2 text-gray-500">
-                  <li>Up-To-Date Exam Study Material</li>
-                </ol>
-                <hr style={{ border: "1px solid #F5F6FA" }} />
-                <h6 className="text-2xl text-gray-600 font-semibold">PDF</h6>
-                <ol className="list-disc pl-4 text-sm mb-2 text-gray-500">
+                <ol className="sm:list-disc pl-4 text-sm mb-2 text-gray-500 text-center sm:text-left">
                   <li>Best Value Available in Market</li>
                   <li>Try Demo Before You Buy</li>
                   <li>Secure Shopping Experience</li>
                   <li>Exam Questions And Answers</li>
                   <li>99.5% High Success Pass Rate</li>
                 </ol>
-                <hr style={{ border: "1px solid #F5F6FA" }} />
+                {/* <hr style={{ border: "1px solid #F5F6FA" }} /> */}
               </Grid>
             </Grid>
           </div>
         </Grid>
         <Grid item xs={12} lg={5}>
+          <Grid container>
+            <Grid item xs={12} sm={6}>
+              <h6 className="text-2xl text-gray-600 font-semibold text-center sm:text-left">
+                Exam Questions
+              </h6>
+              <ol className="sm:list-disc pl-4 text-sm mb-2 text-gray-500 text-center sm:text-left">
+                <li>Up-To-Date Exam Study Material</li>
+              </ol>
+              {/* <hr style={{ border: "1px solid #F5F6FA" }} /> */}
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <h6 className="text-2xl text-gray-600 font-semibold text-center sm:text-left">
+                Safe Files
+              </h6>
+              <ol className="sm:list-disc pl-4 text-sm mb-2 text-gray-500 text-center sm:text-left">
+                <li>Guaranteed To Have Actual PDF</li>
+              </ol>
+              {/* <hr style={{ border: "1px solid #F5F6FA" }} /> */}
+            </Grid>
+          </Grid>
           <div
             style={{
               display: "flex",
@@ -68,9 +76,9 @@ const CertificationMulitpleExams = ({ data }) => {
               <Card
                 sx={{
                   bgcolor: "#c7dfe8",
-                  p: "15px",
+                  p: "10px",
                   textAlign: "center",
-                  mt: "10px",
+                  mt: "-20px",
                   boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
                   mb: "20px",
                   width: "100%",
@@ -91,6 +99,7 @@ const CertificationMulitpleExams = ({ data }) => {
           </div>
         </Grid>
       </Grid>
+
       <Grid
         container
         xs={12}
@@ -99,6 +108,9 @@ const CertificationMulitpleExams = ({ data }) => {
         justifyContent="center"
         spacing={3}
       >
+        <Grid item xs={12}>
+          <hr style={{ border: "1px solid #F5F6FA" }} />
+        </Grid>
         {data?.map((item, i) => (
           <Grid
             item

@@ -434,7 +434,10 @@ const MainNav = () => {
                           <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
                             Login History
                           </li>
-                          <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                          <li
+                            onClick={handleSignOut}
+                            className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer"
+                          >
                             Logout
                           </li>
                         </ul>

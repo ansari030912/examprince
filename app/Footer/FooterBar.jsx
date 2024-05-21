@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 
 const FooterBar = () => {
@@ -7,9 +8,9 @@ const FooterBar = () => {
       <div class="container px-1 mx-auto">
         <div class="flex flex-wrap lg:items-center pt-12 pb-12 px-2 md:px-0 -mx-4">
           <div class="w-full md:w-3/4 px-4">
-            <a class="block mb-8 max-w-max" href="#">
+            <Link class="block mb-8 max-w-max" href="/">
               <img class="h-5" src="/img/examprince_dark_svg.svg" alt="" />
-            </a>
+            </Link>
             <p class="mb-8 text-base md:text-lg text-justify text-gray-600 font-medium">
               <span
                 style={{
@@ -74,9 +75,9 @@ const FooterBar = () => {
           </div>
           <div class="w-full md:w-1/4 px-4">
             <div class="lg:pr-10 lg:ml-auto lg:max-w-max text-center">
-              <a class="block mb-10" href="#">
-                <img src="/safe_checkout_optimized.png" alt="" />
-              </a>
+              {/* <Link class="block mb-10" href="#"> */}
+              <img src="/safe_checkout_optimized.png" alt="" />
+              {/* </Link> */}
             </div>
           </div>
         </div>
