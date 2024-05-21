@@ -23,7 +23,6 @@ const ArticleCard = ({ examData }) => {
                 {examData.exam_vendor_title}
               </div>
               <div class="flex items-center">
-                {/* <p class="inline-block text-green-500 font-medium">Hussnain</p> */}
                 <span class="mx-1 text-green-500">•</span>
                 <p class="inline-block text-green-500 font-medium">
                   21 May 2024
@@ -101,7 +100,7 @@ const ArticleCard = ({ examData }) => {
                 Understanding the time constraints of professionals, Exam Prince
                 has developed comprehensive
                 <span className="mb-6 mt-6 p-6 block border-l-2 text-blue-400 border-green-500">
-                  {examData.exam_certs.map((item, index) => (
+                  {examData?.exam_certs?.map((item, index) => (
                     <p
                       key={index}
                       className="mb-4 text-lg md:text-xl leading-tight font-medium text-blue-500 hover:text-blue-600"
@@ -150,11 +149,18 @@ const ArticleCard = ({ examData }) => {
               </h3>
               <p class="mb-14 text-base md:text-lg text-gray-500">
                 ExamPrince{" "}
-                {examData.exam_certs.map((item, index) => {
-                  {
-                    item.cert_name;
-                  }
-                })}{" "}
+                {examData?.exam_certs?.map((item, index) => (
+                  <span
+                    key={index}
+                    className="mb-4 text-lg md:text-xl leading-tight font-medium text-blue-500 hover:text-blue-600"
+                  >
+                    <Link
+                      href={`/vendor-exam-questions/${examData.exam_vendor_perma}/${item.cert_perma}`}
+                    >
+                      {item.cert_name}
+                    </Link>
+                  </span>
+                ))}{" "}
                 include a concise set of questions that provide reliable,
                 current, and relevant information on each syllabus topic that
                 might be covered in your specific {examData.exam_title} exam.
@@ -163,7 +169,7 @@ const ArticleCard = ({ examData }) => {
                 high-quality information and not wasting time on irrelevant or
                 outdated material. Customer feedback consistently ranks
                 ExamPrince{" "}
-                {examData.exam_certs.map((item, index) => {
+                {examData?.exam_certs?.map((item, index) => {
                   {
                     item.cert_name;
                   }

@@ -216,7 +216,7 @@ const MainNav = () => {
                     </Link>
                   </li>
                   <li className="relative group mr-5">
-                    <Link href={"video-courses"}>
+                    <Link href={"/video-courses"}>
                       <span className="flex items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,7 @@ const MainNav = () => {
                     </Link>
                   </li>
                   <li className="relative group mr-5">
-                    <Link href={"unlimited-access"}>
+                    <Link href={"/unlimited-access"}>
                       <span className="flex items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
