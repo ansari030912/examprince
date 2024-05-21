@@ -102,7 +102,7 @@ const HotExamCards = ({ data }) => {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-8 md:mb-10">
-          <h1 className="font-heading sm:text-4xl text-gray-700 mb-6">
+          <h1 className="font-bold sm:text-4xl text-gray-700 mb-6">
             Hot Exams
           </h1>
           <p className="text-lg text-gray-700 opacity-80">

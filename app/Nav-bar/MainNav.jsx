@@ -184,7 +184,7 @@ const MainNav = () => {
                 </Link>
                 <ul className="hidden xl:flex flex-nowrap">
                   <li className="mr-5">
-                    <Link href={"/vendors"}>
+                    <Link href={"/exam-providers"}>
                       <span
                         className="flex flex-wrap items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
                         href="#"
