@@ -3,7 +3,7 @@ import React from "react";
 
 const LogosBannerCard = () => {
   return (
-    <section class="py-14 bg-gray-50">
+    <section class="py-14 bg-gray-50" >
       <div class="container mx-auto px-4">
         <h2 class="mb-8 text-xl font-bold font-heading text-gray-400">
           Trusted by over 15,000 companies and millions of learners around the

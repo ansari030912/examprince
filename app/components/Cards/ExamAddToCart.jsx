@@ -3,14 +3,12 @@
 import moment from "moment";
 import Link from "next/link";
 import AddToCart from "./AddToCart";
+import ExamStats from "./ExamStats";
 const ExamAddToCart = ({ examData }) => {
   return (
     <>
       <section class="pt-6 pb-6 px-6 bg-white">
-        <div className="flex justify-center mb-4">
-          <img src="/MEGASALE DA-min.png" alt="" />
-        </div>
-        <div className="container mx-auto ">
+        <div className="container mx-auto">
           <div class="flex flex-wrap -m-4 mb-20">
             <div class="w-full lg:w-4/12 p-12">
               <div class="flex items-end gap-2">
@@ -147,7 +145,9 @@ const ExamAddToCart = ({ examData }) => {
                       ></path>
                     </svg>
                   </div>
-                  <span class="text-sm font-bold text-gray-600">5.0 (7.932 reviews)</span>
+                  <span class="text-sm font-bold text-gray-600">
+                    5.0 (7.932 reviews)
+                  </span>
                 </div>
               </div>
             </div>
@@ -156,6 +156,7 @@ const ExamAddToCart = ({ examData }) => {
           <AddToCart examData={examData} />
         </div>
       </section>
+      <ExamStats examData={examData} />
     </>
   );
 };

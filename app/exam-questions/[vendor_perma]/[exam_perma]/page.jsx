@@ -1,9 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
+import ArticleCard from "@/app/components/Cards/ArticleCard";
+import CommentCard from "@/app/components/Cards/CommentCard";
 import ExamAddToCart from "@/app/components/Cards/ExamAddToCart";
+import ExamDetailCard from "@/app/components/Cards/ExamDetailCard";
+import ExamFaqCard from "@/app/components/Cards/ExamFaqCard";
 import HotExams from "@/app/components/IndexPages/HotExams";
-import { Box, Grid } from "@mui/material";
+import LogoBanner from "@/app/components/IndexPages/LogoBanner";
 
 const page = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
@@ -41,14 +45,18 @@ const page = async ({ params, searchParams }) => {
 
   return (
     <>
+      <section class="pt-6 pb-6 px-6 bg-white">
+        <div className="flex justify-center mb-4">
+          <img src="/MEGASALE DA-min.png" alt="" />
+        </div>
+      </section>
+      <ExamDetailCard />
       <ExamAddToCart examData={examData} />
-      {/*
-      <br />
-      <DataCard data={data} examData={examData} releatedData={releatedData} />
-      <br />
-    <CommentCard examData={examData} /> */}
-      <hr style={{ border: "4px solid #F7F7F7" }} />
       <HotExams />
+      <LogoBanner />
+      <ArticleCard examData={examData} />
+      <ExamFaqCard examData={examData} />
+      <CommentCard examData={examData} />
     </>
   );
 };
