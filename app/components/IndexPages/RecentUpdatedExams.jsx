@@ -30,7 +30,7 @@ export const RecentUpdatedExams = async () => {
           </p>
         </div>
         <div class="flex flex-wrap lg:items-center -mx-4">
-          <div class="w-full md:w-5/12 lg:w-6/12 px-4 mb-8 lg:mb-0">
+          <div class="w-full lg:w-5/12 xl:w-6/12 px-4 mb-8 lg:mb-0">
             <div class="relative mx-auto lg:ml-0 max-w-max">
               <img
                 class="absolute z-10 -left-8 -top-8 w-28 lg:w-auto text-yellow-400"
@@ -45,7 +45,7 @@ export const RecentUpdatedExams = async () => {
               <img src="/exam.png" alt="" />
             </div>
           </div>
-          <div class="w-full md:w-7/12 lg:w-6/12 px-4">
+          <div class="w-full lg:w-7/12 xl:w-6/12 px-4">
             <RecentUpdateExamCard data={data} />
           </div>
         </div>
