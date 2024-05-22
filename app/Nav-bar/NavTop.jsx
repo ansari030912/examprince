@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import BackCountDown from "../components/Cards/BackCountDown";
 
 const NavTop = () => {
   const [hidden, setHidden] = useState(false);
@@ -31,8 +32,10 @@ const NavTop = () => {
               <span className="font-bold">Upto 70% OFF</span>
               {" - "}
               On Limited Time Mega Sale! Time Left{" - "}
-              <span className="font-bold">16h 59m 57s</span>
-              <hr  className="pt-1 border-green-50"/>
+              <span className="font-bold">
+                <BackCountDown />
+              </span>
+              <hr className="pt-1 border-green-50" />
               <span className="mb-2">
                 Use Discount Coupon{" "}
                 <span className="p-1 px-2 mt-1 mb-2  bg-red-500 border border-red-500 text-white font-bold">
