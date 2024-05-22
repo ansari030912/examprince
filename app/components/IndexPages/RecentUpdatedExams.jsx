@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
-import { Box, Typography } from "@mui/material";
 import RecentUpdateExamCard from "../Cards/RecentUpdateExamCard";
 
 export const RecentUpdatedExams = async () => {
