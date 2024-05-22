@@ -156,7 +156,8 @@ const AllVendorTableCard = ({ data }) => {
           </ul>
           <Box
             sx={{
-              boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.2)",
+              boxShadow:
+                "8px 8px 8px rgba(0, 0, 0, 0.1), -8px 8px 8px rgba(0, 0, 0, 0.1), 4px 8px 8px rgba(0, 0, 0, 0.1)",
               borderRadius: "12px",
             }}
           >

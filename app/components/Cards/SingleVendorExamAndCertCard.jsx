@@ -10,7 +10,7 @@ const SingleVendorExamAndCertCard = ({ vendorData, data }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
   const [activeTab, setActiveTab] = useState(
-    vendorData?.vendor_exams ? "vendors" : "certifications"
+    vendorData?.vendor_exams ? "vendor_exams" : "certifications"
   );
 
   const filteredData = vendorData?.vendor_exams?.filter((vendor) =>
@@ -35,7 +35,7 @@ const SingleVendorExamAndCertCard = ({ vendorData, data }) => {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case "vendors":
+      case "vendor_exams":
         return (
           <div>
             <div className="flex flex-wrap items-center mb-3">
@@ -194,14 +194,14 @@ const SingleVendorExamAndCertCard = ({ vendorData, data }) => {
       <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200">
         <li className="me-2 cursor-pointer">
           <span
-            onClick={() => handleTabClick("vendors")}
+            onClick={() => handleTabClick("vendor_exams")}
             className={`inline-block p-2 rounded-t-lg ${
-              activeTab === "vendors"
+              activeTab === "vendor_exams"
                 ? "text-blue-600 bg-gray-200"
                 : "hover:text-gray-600 hover:bg-gray-50"
             }`}
           >
-            Vendors
+            Exams
           </span>
         </li>
         <li className="me-2 cursor-pointer">
