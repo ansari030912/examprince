@@ -366,12 +366,13 @@ const MainNav = () => {
                       <div className="flex flex-wrap items-center -m-2">
                         <div className="w-auto p-2">
                           <div className="flex flex-wrap -m-2">
-                            <div className="w-auto p-2 -mr-1">
+                            <div className="w-auto cursor-pointer p-2 -mr-1">
                               <img
                                 src="/avatar.png"
                                 height={"45px"}
                                 width={"45px"}
                                 alt=""
+                                onClick={toggleDropdown}
                               />
                             </div>
                             <div className="w-auto p-2">
@@ -408,7 +409,7 @@ const MainNav = () => {
                     {isOpen && (
                       <div
                         style={{ borderRadius: "4px", zIndex: 1000 }}
-                        className="border absolute bg-white border-gray-300 w-74 ml-2 mt-3 text-nowrap"
+                        className="border absolute bg-white border-gray-300 w-85 mt-3 text-nowrap"
                       >
                         <div className="p-2">
                           <h2 className="text-sm font-semibold text-gray-700">
@@ -418,22 +419,34 @@ const MainNav = () => {
                             {loginResponse?.email}
                           </p>
                         </div>
+                        <hr />
                         <ul className="m-2">
-                          <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
-                            Products
-                          </li>
-                          <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
-                            Invoice
-                          </li>
-                          <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
-                            Setting
-                          </li>
-                          <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
-                            Download History
-                          </li>
-                          <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
-                            Login History
-                          </li>
+                          <Link href={"/profile/products"}>
+                            <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                              Products
+                            </li>
+                          </Link>
+                          <Link href={"/profile/products"}>
+                            <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                              Invoice
+                            </li>
+                          </Link>
+                          <Link href={"/profile/products"}>
+                            <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                              Setting
+                            </li>
+                          </Link>
+                          <Link href={"/profile/products"}>
+                            <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                              Download History
+                            </li>
+                          </Link>
+                          <Link href={"/profile/products"}>
+                            <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
+                              Login History
+                            </li>
+                          </Link>
+                          <hr />
                           <li
                             onClick={handleSignOut}
                             className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer"
