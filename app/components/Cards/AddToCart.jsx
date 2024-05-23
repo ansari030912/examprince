@@ -53,7 +53,7 @@ const AddToCart = ({ examData }) => {
       <div class="w-full lg:w-12/12 p-4 ">
         <Grid container spacing={2}>
           <Grid item xs={12} md={5}>
-            <p class="text-xl mb-4">Select Product</p>
+            <p class="text-xl font-bold text-gray-700 mb-4">Select Product</p>
             <Grid
               container
               spacing={2}

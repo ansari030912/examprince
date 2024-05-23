@@ -31,6 +31,7 @@ const page = async ({ params, searchParams }) => {
       },
     }
   );
+  
   const examData = await examResponce.json();
 
   const response = await fetch(`${Base_URL}/v1/hot_exams`, {
