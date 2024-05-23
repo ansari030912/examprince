@@ -4,6 +4,7 @@ import moment from "moment";
 import Link from "next/link";
 import AddToCart from "./AddToCart";
 import ExamStats from "./ExamStats";
+import ExamDetailCard from "./ExamDetailCard";
 const ExamAddToCart = ({ examData }) => {
   return (
     <>
@@ -150,6 +151,9 @@ const ExamAddToCart = ({ examData }) => {
                   </span>
                 </div>
               </div>
+            </div>
+            <div className="md:hidden">
+              <ExamDetailCard />
             </div>
           </div>
           <hr className="-mt-20" />

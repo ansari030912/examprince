@@ -16,8 +16,8 @@ export default function Home() {
       <SiteOverView />
       <AboutCard />
       <HotExams />
-      {/* <WhyChoseCard /> */}
       <CertificationHomePageCard />
+      <WhyChoseCard />
     </>
   );
 }

@@ -50,7 +50,9 @@ const page = async ({ params, searchParams }) => {
           <img src="/MEGASALE DA-min.png" alt="" />
         </div>
       </section>
-      <ExamDetailCard />
+      <div className="md:block hidden">
+        <ExamDetailCard />
+      </div>
       <ExamAddToCart examData={examData} />
       <HotExams />
       <LogoBanner />
