@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/exam-provider/${params.vendor_perma}`,
+          url: `https://examaster.netlify.app/exam-provider/${params.vendor_perma}`,
         },
       ],
     },
