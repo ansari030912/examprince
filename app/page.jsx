@@ -1,5 +1,6 @@
 import CertificationHomePageCard from "./components/Cards/CertificationHomePageCard";
 import SiteOverView from "./components/Cards/SiteOverView";
+import TestimonialCarousel from "./components/Cards/TestimonialCarousel";
 import WhyChoseCard from "./components/Cards/WhyChoseCard";
 import AboutCard from "./components/IndexPages/AboutCard";
 import HotExams from "./components/IndexPages/HotExams";
@@ -17,6 +18,7 @@ export default function Home() {
       <AboutCard />
       <HotExams />
       <CertificationHomePageCard />
+      <TestimonialCarousel />
       <WhyChoseCard />
     </>
   );
