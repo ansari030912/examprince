@@ -109,6 +109,7 @@ const ArticleCard = ({ examData }) => {
                         href={`/vendor-exam-questions/${examData.exam_vendor_perma}/${item.cert_perma}`}
                       >
                         {item.cert_name}
+                        <br />
                       </Link>
                     </p>
                   ))}
@@ -157,7 +158,7 @@ const ArticleCard = ({ examData }) => {
                     <Link
                       href={`/vendor-exam-questions/${examData.exam_vendor_perma}/${item.cert_perma}`}
                     >
-                      {item.cert_name}
+                      {item.cert_name},{" "}
                     </Link>
                   </span>
                 ))}{" "}
