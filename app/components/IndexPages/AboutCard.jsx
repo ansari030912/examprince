@@ -38,7 +38,7 @@ const AboutCard = () => {
               <div className="px-4 md:px-8 py-9 bg-white">
                 <ul className="mb-5">
                   <li className="py-5 px-6 border-b">
-                    <span className="flex items-center text-lg font-bold font-heading hover:text-blue-300">
+                    <span className="flex items-center text-lg font-bold font-heading hover:text-green-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mr-5"
@@ -62,7 +62,7 @@ const AboutCard = () => {
                     </span>
                   </li>
                   <li className="py-5 px-6 border-b">
-                    <span className="flex items-center text-lg font-bold font-heading hover:text-blue-300">
+                    <span className="flex items-center text-lg font-bold font-heading hover:text-green-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mr-5"
@@ -85,7 +85,7 @@ const AboutCard = () => {
                     </span>
                   </li>
                   <li className="py-5 px-6 border-b">
-                    <span className="flex items-center text-lg font-bold font-heading hover:text-blue-300">
+                    <span className="flex items-center text-lg font-bold font-heading hover:text-green-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mr-5"
@@ -104,7 +104,7 @@ const AboutCard = () => {
                     </span>
                   </li>
                   <li className="py-5 px-6 border-b">
-                    <span className="flex items-center text-lg font-bold font-heading hover:text-blue-300">
+                    <span className="flex items-center text-lg font-bold font-heading hover:text-green-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mr-5"
@@ -123,7 +123,7 @@ const AboutCard = () => {
                     </span>
                   </li>
                   <li className="py-5 px-6 border-b">
-                    <span className="flex items-center text-lg font-bold font-heading hover:text-blue-300">
+                    <span className="flex items-center text-lg font-bold font-heading hover:text-green-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mr-5"

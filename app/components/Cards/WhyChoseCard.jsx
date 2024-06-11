@@ -5,7 +5,7 @@ const WhyChoseCard = () => {
   return (
     <section
       //   style={{ borderBottom: "30px solid #F7F7F7" }}
-      class="pt-12 pb-12 bg-white overflow-hidden "
+      class="pt-4 pb-12 bg-white overflow-hidden "
     >
       <div class="container mx-auto px-4">
         <div class="bg-gray-50 overflow-hidden rounded-t-3xl">
