@@ -5,6 +5,7 @@ import CountUp from "react-countup";
 const ExamStats = ({ examData }) => {
   const [startCount, setStartCount] = useState(false);
   const [randomNumber, setRandomNumber] = useState(0);
+  const [randomBuyedNumber, setRandomBuyedNumber] = useState(0);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -37,6 +38,12 @@ const ExamStats = ({ examData }) => {
       const max = 1200000;
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+    function getRandomBuyedNumber() {
+      const min = 5000;
+      const max = 35000;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    setRandomBuyedNumber(getRandomBuyedNumber());
     setRandomNumber(getRandomNumber());
   }, []);
 
@@ -94,7 +101,9 @@ const ExamStats = ({ examData }) => {
               </span>
             </p>
             <p className="my-1 text-3xl lg:text-4xl font-bold font-heading">
-              {startCount && <CountUp start={0} end={randomNumber} duration={2} />}
+              {startCount && (
+                <CountUp start={0} end={randomNumber} duration={2} />
+              )}
             </p>
             <span className="text-sm lg:text-base font-semibold text-gray-500">
               Users Search for this Exam
@@ -109,7 +118,7 @@ const ExamStats = ({ examData }) => {
             </p>
             <p className="my-1 text-3xl lg:text-4xl font-bold font-heading">
               {startCount && (
-                <CountUp start={0} end={13754} duration={2} suffix="" />
+                <CountUp start={0} end={randomBuyedNumber} duration={2} suffix="" />
               )}
             </p>
             <span className="text-sm lg:text-base font-semibold text-gray-500">
