@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 
 const CartPage = () => {
   const [loginResponse, setLoginResponse] = useState(null);
-  const [cartResponce, setCartResponce] = useState(null);
+  const [cartResponse, setCartResponse] = useState(null);
   const [examData, setExamData] = useState(null);
   // const searchParams = useSearchParams();
   // const queryEmail = searchParams?.get("referralCode");
   // console.log("🚀 ~ CheckOutCard ~ queryEmail:", queryEmail);
   const discountAmount =
-    Math.floor(cartResponce?.full_price) - Math?.floor(cartResponce?.price);
+    Math.floor(cartResponse?.full_price) - Math?.floor(cartResponse?.price);
 
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
@@ -22,9 +22,9 @@ const CartPage = () => {
       }
     }
     if (typeof localStorage !== "undefined") {
-      const storedLoginResponse = localStorage.getItem("ExamCartAdded");
-      if (storedLoginResponse) {
-        setCartResponce(JSON.parse(storedLoginResponse));
+      const storedCartResponse = localStorage.getItem("ExamCartAdded");
+      if (storedCartResponse) {
+        setCartResponse(JSON.parse(storedCartResponse));
       }
     }
     if (typeof localStorage !== "undefined") {
@@ -40,23 +40,24 @@ const CartPage = () => {
     localStorage.removeItem("CartExamData");
     window.location.reload();
   };
+
   return (
-    <section class="pt-9 pb-16 bg-white" style={{ borderRadius: "12px" }}>
-      <div class="container mx-auto px-4">
-        {cartResponce ? (
+    <section className="pt-9 pb-16 bg-white" style={{ borderRadius: "12px" }}>
+      <div className="container mx-auto px-4">
+        {cartResponse ? (
           <>
-            <div class="flex flex-wrap gap-2 mb-8">
-              <Link href="/" class="group">
-                <div class="flex flex-wrap items-center">
-                  <span class="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
+            <div className="flex flex-wrap gap-2 mb-8">
+              <Link href="/" className="group">
+                <div className="flex flex-wrap items-center">
+                  <span className="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
                     Home
                   </span>
-                  <div class="text-gray-500 group-hover:text-gray-900 transition duration-200">
+                  <div className="text-gray-500 group-hover:text-gray-900 transition duration-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                     >
                       <path
@@ -67,17 +68,17 @@ const CartPage = () => {
                   </div>
                 </div>
               </Link>
-              <Link href="#" class="group">
-                <div class="flex flex-wrap items-center">
-                  <span class="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
+              <Link href="#" className="group">
+                <div className="flex flex-wrap items-center">
+                  <span className="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
                     Checkout
                   </span>
-                  <div class="text-gray-500 group-hover:text-gray-900 transition duration-200">
+                  <div className="text-gray-500 group-hover:text-gray-900 transition duration-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                     >
                       <path
@@ -89,73 +90,70 @@ const CartPage = () => {
                 </div>
               </Link>
             </div>
-            <div class="flex flex-wrap -m-8">
-              <div class="w-full lg:w-7/12 p-8">
-                <div class="px-4 py-6 border border-gray-100 rounded-lg">
-                  <h6 class="mb-4 text-lg font-semibold text-center">
+            <div className="flex flex-wrap -m-4">
+              <div className="w-full lg:w-7/12 p-4">
+                <div className="px-4 py-6 border border-gray-100 rounded-lg">
+                  <h6 className="mb-4 text-lg font-semibold text-center">
                     Billing Address
                   </h6>
 
-                  <div class="mb-4">
-                    <label for="input-01-5" class="mb-1.5 inline-block text-sm">
+                  <div className="mb-4">
+                    <label htmlFor="input-01-5" className="mb-1.5 inline-block text-sm">
                       Phone number
                     </label>
                     <input
                       id="input-01-5"
                       name="phone-number"
                       type="text"
-                      class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
+                      className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
                       placeholder="Your phone number"
                     />
                   </div>
-                  <div class="mb-4">
-                    <label for="input-01-6" class="mb-1.5 inline-block text-sm">
+                  <div className="mb-4">
+                    <label htmlFor="input-01-6" className="mb-1.5 inline-block text-sm">
                       Street name and house number
                     </label>
                     <input
                       id="input-01-6"
                       name="street-name"
                       type="text"
-                      class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
+                      className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
                       placeholder="-"
                     />
                   </div>
-                  <div class="mb-4">
-                    <label for="input-01-7" class="mb-1.5 inline-block text-sm">
+                  <div className="mb-4">
+                    <label htmlFor="input-01-7" className="mb-1.5 inline-block text-sm">
                       City
                     </label>
                     <input
                       id="input-01-7"
                       name="city"
                       type="text"
-                      class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
+                      className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
                       placeholder="Your city"
                     />
                   </div>
-                  <div class="mb-4">
-                    <label for="input-01-8" class="mb-1.5 inline-block text-sm">
+                  <div className="mb-4">
+                    <label htmlFor="input-01-8" className="mb-1.5 inline-block text-sm">
                       Postal code
                     </label>
                     <input
                       id="input-01-8"
                       name="postal-code"
                       type="text"
-                      class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
+                      className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
                       placeholder="Your postal code"
                     />
                   </div>
 
-                  <div class="mb-4">
-                    <label
-                      for="select-01-2"
-                      class="mb-1.5 inline-block text-sm"
-                    >
+                  <div className="mb-4">
+                    <label htmlFor="select-01-2" className="mb-1.5 inline-block text-sm">
                       Country
                     </label>
                     <select
                       name="country"
                       id="select-01-2"
-                      class="appearance-none block py-3 px-4 w-full text-sm text-gray-500 placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
+                      className="appearance-none block py-3 px-4 w-full text-sm text-gray-500 placeholder-gray-500 outline-none border focus:border-gray-300 focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
                     >
                       <option value="" selected="" disabled="" hidden="">
                         Select country
@@ -166,19 +164,19 @@ const CartPage = () => {
                       <option value="australia">Australia</option>
                     </select>
                   </div>
-                  <label class="relative flex items-center gap-2 mb-4">
+                  <label className="relative flex items-center gap-2 mb-4">
                     <input
-                      class="custom-checkbox-1 opacity-0 absolute h-4 w-4"
+                      className="custom-checkbox-1 opacity-0 absolute h-4 w-4"
                       type="checkbox"
                       name="checkout-info"
                     />
-                    <span class="border border-gray-900 w-4 h-4 flex justify-center items-center rounded-sm">
+                    <span className="border border-gray-900 w-4 h-4 flex justify-center items-center rounded-sm">
                       <svg
-                        class="fill-current hidden"
+                        className="fill-current hidden"
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
-                        viewbox="0 0 16 16"
+                        viewBox="0 0 16 16"
                         fill="none"
                       >
                         <path
@@ -187,42 +185,40 @@ const CartPage = () => {
                         ></path>
                       </svg>
                     </span>
-                    <span class="text-sm">
-                      Same my information for future checkout
-                    </span>
+                    <span className="text-sm">Save my information for future checkout</span>
                   </label>
                 </div>
               </div>
-              <div class="w-full lg:w-5/12 p-8">
-                <div class="px-4 py-6 border border-gray-200 rounded-2xl">
-                  <h6 class="mb-4 text-2xl font-semibold text-center">
+              <div className="w-full lg:w-5/12 p-4">
+                <div className="px-4 py-6 border border-gray-200 rounded-2xl">
+                  <h6 className="mb-4 text-2xl font-semibold text-center">
                     Your order
                   </h6>
-                  <div class="pb-6 border-b border-dashed">
-                    <div class="flex flex-wrap items-end -m-2">
-                      <div class="w-full p-2">
-                        <div class="flex -m-2">
-                          <div class="w-auto p-2">
+                  <div className="pb-6 border-b border-dashed">
+                    <div className="flex flex-wrap items-end -m-2">
+                      <div className="w-full p-2">
+                        <div className="flex -m-2">
+                          <div className="w-auto p-2">
                             <img
-                              class="rounded-lg"
+                              className="rounded-lg"
                               src="/package-small-min_optimized.png"
                               alt=""
                               width={"100px"}
                             />
                           </div>
-                          <div class=" p-2">
-                            <p class="mb-1.5 font-semibold text-blue-500  text-sm">
+                          <div className="p-2">
+                            <p className="mb-1.5 font-semibold text-blue-500 text-sm">
                               {examData?.exam_title}
                             </p>
-                            <p class="mb-1.5 text-sm text-green-600">
-                              {examData?.exam_title === cartResponce?.title
+                            <p className="mb-1.5 text-sm text-green-600">
+                              {examData?.exam_title === cartResponse?.title
                                 ? ""
-                                : cartResponce?.title}
+                                : cartResponse?.title}
                             </p>
                             <div className="flex justify-between">
                               <p className="text-base">x1</p>
                               <span className="text-xl font-semibold">
-                                $ {cartResponce?.full_price}
+                                $ {cartResponse?.full_price}
                               </span>
                             </div>
                           </div>
@@ -231,88 +227,88 @@ const CartPage = () => {
                     </div>
                     <button
                       onClick={handleRemoveData}
-                      class="py-3 px-7 mt-6 w-full text-sm text-white font-semibold bg-red-500 hover:bg-red-600 focus:bg-red-500 rounded-5xl focus:ring-4 focus:ring-gray-200 transition duration-300"
+                      className="py-3 px-7 mt-6 w-full text-sm text-white font-semibold bg-red-500 hover:bg-red-600 focus:bg-red-500 rounded-5xl focus:ring-4 focus:ring-gray-200 transition duration-300"
                     >
                       Clear Cart
                     </button>
                   </div>
-                  <div class="py-6 border-b border-dashed">
-                    <h6 class="mb-4 text-lg font-semibold ">Discount Code</h6>
+                  <div className="py-6 border-b border-dashed">
+                    <h6 className="mb-4 text-lg font-semibold">Discount Code</h6>
                     <form action="#">
-                      <div class="flex flex-wrap items-center -m-2 mb-0.5">
-                        <div class="w-full lg:flex-1 p-2">
+                      <div className="flex flex-wrap items-center -m-2 mb-0.5">
+                        <div className="w-full lg:flex-1 p-2">
                           <input
                             type="text"
                             name="voucher"
-                            class="py-3 px-4 w-full text-sm placeholder-gray-500 bg-gray-50 outline-none focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
+                            className="py-3 px-4 w-full text-sm placeholder-gray-500 bg-gray-50 outline-none focus:ring focus:ring-gray-100 border-gray-100 rounded-lg transition duration-200"
                             placeholder="Enter your voucher"
                           />
                         </div>
-                        <div class="w-full lg:w-auto p-2">
-                          <button class="py-3 px-7 w-full text-sm text-white font-semibold bg-gray-900 hover:bg-gray-800 focus:bg-gray-900 rounded-5xl focus:ring-4 focus:ring-gray-200 transition duration-300">
+                        <div className="w-full lg:w-auto p-2">
+                          <button className="py-3 px-7 w-full text-sm text-white font-semibold bg-gray-900 hover:bg-gray-800 focus:bg-gray-900 rounded-5xl focus:ring-4 focus:ring-gray-200 transition duration-300">
                             Apply
                           </button>
                         </div>
                       </div>
                     </form>
-                    <p class="text-sm">
+                    <p className="text-sm">
                       New customer?{" "}
                       <Link
                         href="/register"
-                        class="inline-block text-green-800 hover:text-green-900 font-semibold"
+                        className="inline-block text-green-800 hover:text-green-900 font-semibold"
                       >
                         register
                       </Link>{" "}
                       to get better deals
                     </p>
                   </div>
-                  <div class="py-5 border-b border-dashed">
-                    <div class="flex flex-wrap justify-between -m-2">
-                      <div class="w-auto p-2">
-                        <span class="text-sm text-gray-500">Subtotal</span>
+                  <div className="py-5 border-b border-dashed">
+                    <div className="flex flex-wrap justify-between -m-2">
+                      <div className="w-auto p-2">
+                        <span className="text-sm text-gray-500">Subtotal</span>
                       </div>
-                      <div class="w-auto p-2">
-                        <span class="font-semibold text-xl text-red-600">
-                          $ {cartResponce?.full_price}
+                      <div className="w-auto p-2">
+                        <span className="font-semibold text-xl text-red-600">
+                          $ {cartResponse?.full_price}
                         </span>
                       </div>
                     </div>
-                    <div class="flex flex-wrap justify-between -m-2">
-                      <div class="w-auto p-2">
-                        <span class="text-sm text-gray-500">Off</span>
+                    <div className="flex flex-wrap justify-between -m-2">
+                      <div className="w-auto p-2">
+                        <span className="text-sm text-gray-500">Off</span>
                       </div>
-                      <div class="w-auto p-2">
-                        <span class="font-semibold text-green-500 text-xl">
-                          {cartResponce?.off} %
+                      <div className="w-auto p-2">
+                        <span className="font-semibold text-green-500 text-xl">
+                          {cartResponse?.off} %
                         </span>
                       </div>
                     </div>
-                    <div class="flex flex-wrap justify-between -m-2">
-                      <div class="w-auto p-2">
-                        <span class="text-sm text-gray-500">Discount</span>
+                    <div className="flex flex-wrap justify-between -m-2">
+                      <div className="w-auto p-2">
+                        <span className="text-sm text-gray-500">Discount</span>
                       </div>
-                      <div class="w-auto p-2">
-                        <span class="font-semibold text-green-500 text-xl">
+                      <div className="w-auto p-2">
+                        <span className="font-semibold text-green-500 text-xl">
                           $ {discountAmount}
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div class="pt-6">
-                    <div class="flex flex-wrap items-center justify-between -m-2">
-                      <div class="w-auto p-2">
-                        <p class="font-semibold text-2xl">Total Price</p>
+                  <div className="pt-6">
+                    <div className="flex flex-wrap items-center justify-between -m-2">
+                      <div className="w-auto p-2">
+                        <p className="font-semibold text-2xl">Total Price</p>
                       </div>
-                      <div class="w-auto p-2">
-                        <p class="text-2xl font-semibold text-green-500">
-                          $ {cartResponce?.price}
+                      <div className="w-auto p-2">
+                        <p className="text-2xl font-semibold text-green-500">
+                          $ {cartResponse?.price}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <button class="py-3 px-7 mt-6 w-full text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 focus:bg-blue-500 rounded-5xl focus:ring-4 focus:ring-gray-200 transition duration-300">
+                <button className="py-3 px-7 mt-6 w-full text-sm text-white font-semibold bg-blue-500 hover:bg-blue-600 focus:bg-blue-500 rounded-5xl focus:ring-4 focus:ring-gray-200 transition duration-300">
                   Check Out
                 </button>
               </div>
