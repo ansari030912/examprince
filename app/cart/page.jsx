@@ -98,7 +98,10 @@ const CartPage = () => {
                   </h6>
 
                   <div className="mb-4">
-                    <label htmlFor="input-01-5" className="mb-1.5 inline-block text-sm">
+                    <label
+                      htmlFor="input-01-5"
+                      className="mb-1.5 inline-block text-sm"
+                    >
                       Phone number
                     </label>
                     <input
@@ -110,7 +113,10 @@ const CartPage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="input-01-6" className="mb-1.5 inline-block text-sm">
+                    <label
+                      htmlFor="input-01-6"
+                      className="mb-1.5 inline-block text-sm"
+                    >
                       Street name and house number
                     </label>
                     <input
@@ -122,7 +128,10 @@ const CartPage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="input-01-7" className="mb-1.5 inline-block text-sm">
+                    <label
+                      htmlFor="input-01-7"
+                      className="mb-1.5 inline-block text-sm"
+                    >
                       City
                     </label>
                     <input
@@ -134,7 +143,10 @@ const CartPage = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="input-01-8" className="mb-1.5 inline-block text-sm">
+                    <label
+                      htmlFor="input-01-8"
+                      className="mb-1.5 inline-block text-sm"
+                    >
                       Postal code
                     </label>
                     <input
@@ -147,7 +159,10 @@ const CartPage = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label htmlFor="select-01-2" className="mb-1.5 inline-block text-sm">
+                    <label
+                      htmlFor="select-01-2"
+                      className="mb-1.5 inline-block text-sm"
+                    >
                       Country
                     </label>
                     <select
@@ -185,7 +200,9 @@ const CartPage = () => {
                         ></path>
                       </svg>
                     </span>
-                    <span className="text-sm">Save my information for future checkout</span>
+                    <span className="text-sm">
+                      Save my information for future checkout
+                    </span>
                   </label>
                 </div>
               </div>
@@ -233,7 +250,9 @@ const CartPage = () => {
                     </button>
                   </div>
                   <div className="py-6 border-b border-dashed">
-                    <h6 className="mb-4 text-lg font-semibold">Discount Code</h6>
+                    <h6 className="mb-4 text-lg font-semibold">
+                      Discount Code
+                    </h6>
                     <form action="#">
                       <div className="flex flex-wrap items-center -m-2 mb-0.5">
                         <div className="w-full lg:flex-1 p-2">
