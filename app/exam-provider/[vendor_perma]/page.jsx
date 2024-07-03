@@ -2,7 +2,6 @@
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
 import SingleVendorExamAndCertCard from "@/app/components/Cards/SingleVendorExamAndCertCard";
-import { Grid } from "@mui/material";
 
 export async function generateMetadata({ params }) {
   return {
