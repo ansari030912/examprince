@@ -346,7 +346,7 @@ export default function Home() {
                 sx={{
                   position: "relative",
                   paddingTop: "40px",
-                  borderRadius: "4px",
+                  borderRadius: "8px",
                   minHeight: "140px",
                   boxShadow:
                     "4px 4px 6px 1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
