@@ -20,6 +20,7 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
 const page = async ({ params }) => {
   const vendorResponce = await fetch(
     `${Base_URL}/v1/vendor/${params.vendor_perma}`,
