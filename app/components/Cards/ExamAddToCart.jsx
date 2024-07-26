@@ -76,7 +76,7 @@ const ExamAddToCart = ({ examData }) => {
                       <Link
                         key={i}
                         className="hover:underline text-sky-500"
-                        href={`/vendor-exam-questions/${examData?.exam_vendor_perma}/${item?.cert_perma}`}
+                        href={`/vendor-mock-exam/${examData?.exam_vendor_perma}/${item?.cert_perma}`}
                       >
                         {item.cert_title},{"  "}
                       </Link>

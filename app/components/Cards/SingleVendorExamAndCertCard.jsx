@@ -160,7 +160,7 @@ const SingleVendorExamAndCertCard = ({ vendorData, data }) => {
                     </span>
                     <div>
                       <Link
-                        href={`/vendor-exam-questions/${vendorData.vendor_perma}/${item?.cert_perma}`}
+                        href={`/vendor-mock-exam/${vendorData.vendor_perma}/${item?.cert_perma}`}
                       >
                         <h4 className="text-sm font-medium text-blue-500 hover:text-blue-600 hover:underline">
                           {item.cert_title}
@@ -171,7 +171,7 @@ const SingleVendorExamAndCertCard = ({ vendorData, data }) => {
                   <div className="flex md:items-center justify-end">
                     <span className="md:inline-block hidden mr-3 py-1 px-2 bg-indigo-50 text-xs text-indigo-500 rounded-full">
                       <Link
-                        href={`/vendor-exam-questions/${vendorData.vendor_perma}/${item?.cert_perma}`}
+                        href={`/vendor-mock-exam/${vendorData.vendor_perma}/${item?.cert_perma}`}
                       >
                         # {item?.cert_id}
                       </Link>

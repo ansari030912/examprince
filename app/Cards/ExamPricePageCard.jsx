@@ -165,7 +165,7 @@ const ExamPricePageCard = ({ data }) => {
                         <Link
                           key={i}
                           className="hover:underline text-sky-500"
-                          href={`/vendor-exam-questions/${data?.exam_vendor_perma}/${item?.cert_perma}`}
+                          href={`/vendor-mock-exam/${data?.exam_vendor_perma}/${item?.cert_perma}`}
                         >
                           {item.cert_title},{"  "}
                         </Link>

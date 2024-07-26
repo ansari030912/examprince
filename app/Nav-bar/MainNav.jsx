@@ -111,7 +111,7 @@ const MainNav = () => {
     setSearchValue("");
   };
   const handleCertificationPage = (exam) => {
-    router.push(`/vendor-exam-questions/${exam.vendor}/${exam.slug}`);
+    router.push(`/vendor-mock-exam/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
 
@@ -178,7 +178,7 @@ const MainNav = () => {
                   <img
                     src="/img/dumpscollections_dark.png"
                     alt=""
-                   className="h-12 w-46"
+                    className="h-12 w-46"
                   />
                 </Link>
                 <ul className="hidden xl:flex flex-nowrap">

@@ -1,6 +1,6 @@
 export default async function sitemap() {
   const response = await fetch(
-    "https://certsgang.com/v1/sitemap/certification/2",
+    "https://certsgang.com/v1/sitemap/certification/1",
     {
       headers: {
         "x-api-key": "b46279cb-13bb-4445-a6f9-6f252b61ae79",
@@ -13,9 +13,12 @@ export default async function sitemap() {
   }
 
   const data = await response.json();
+  
 
   return data?.certs?.map((item) => ({
-    url: `https://examaster.netlify.app/vendor-exam-questions/${item?.vendor_perma}/${item?.cert_perma}`,
+    url: `https://examaster.netlify.app/vendor-mock-exam/${
+      item?.vendor_perma
+    }/${item?.cert_perma.replace(/&/g, "&amp;")}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));
