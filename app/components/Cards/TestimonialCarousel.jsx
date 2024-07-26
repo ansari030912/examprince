@@ -267,7 +267,7 @@ const TestimonialCarousel = () => {
             textWrap: "nowrap",
           }}
         >
-          Top World Wide Review About ExamPrince.com
+          Top World Wide Review About Dumps-Collections.com
         </p>
         <div className="carousel-container">
           <div ref={trackRef} className="carousel-track">

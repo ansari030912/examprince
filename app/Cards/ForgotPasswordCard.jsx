@@ -49,7 +49,7 @@ const ForgotPasswordCard = () => {
         {
           email,
           ip,
-          reset_url: "http://examprince.com/reset-password/",
+          reset_url: "http://dumps-collections.com/reset-password/",
         },
         {
           headers: {

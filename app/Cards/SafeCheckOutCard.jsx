@@ -56,8 +56,8 @@ const SafeCheckOutCard = () => {
             fontSize={15}
             className="text-gray-700 text-lg pl-1"
           >
-            Your purchase with ExamPrince.com is safe and fast. The
-            ExamPrince.com website is protected by 256-bit SSL from Cloudflare,
+            Your purchase with Dumps-Collections.com is safe and fast. The
+            Dumps-Collections.com website is protected by 256-bit SSL from Cloudflare,
             the leader in online security.
           </Typography>
           <Link

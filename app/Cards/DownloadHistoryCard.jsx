@@ -63,7 +63,7 @@ const DownloadHistoryCard = () => {
                   component="div"
                   fontSize={12}
                 >
-                  ExamPrince.com has a remarkable success record. We're
+                  Dumps-Collections.com has a remarkable success record. We're
                   confident of our products and provide a no hassle refund
                   policy.
                 </Typography>
@@ -133,8 +133,8 @@ const DownloadHistoryCard = () => {
                   fontSize={12}
                   style={{ textAlign: "justify" }}
                 >
-                  Your purchase with ExamPrince.com is safe and fast. The
-                  ExamPrince.com website is protected by 256-bit SSL from
+                  Your purchase with Dumps-Collections.com is safe and fast. The
+                  Dumps-Collections.com website is protected by 256-bit SSL from
                   Cloudflare, the leader in online security.
                 </Typography>
                 <Link

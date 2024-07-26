@@ -28,7 +28,7 @@ const WindowsCard = () => {
                   "&:hover": { color: "#2563EB", textDecoration: "underline" },
                 }}
               >
-                How to Open Test Engine .ExamPrinceFiles
+                How to Open Test Engine .Dumps-Collections Files
               </Typography>
             </Link>
             <Typography
@@ -36,7 +36,7 @@ const WindowsCard = () => {
               variant="body1"
               sx={{ color: "#1F2937", textAlign: "justify" }}
             >
-              Use FREE ExamPrinceTest Engine player to open .ExamPrincefiles
+              Use FREE Dumps-Collections Test Engine player to open .Dumps-Collections files
             </Typography>
           </div>
         </Grid>

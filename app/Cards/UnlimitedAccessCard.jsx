@@ -20,10 +20,10 @@ const UnlimitedAccessCard = ({ data }) => {
               </h1>
               <p className="text-gray-500 leading-relaxed">
                 <b>
-                  Get Unlimited Access to the all ExamPrincePREMIUM files!
+                  Get Unlimited Access to the all Dumps-CollectionsPREMIUM files!
                   <br />
                   Take advantage of premium Files which are Latest and valid by
-                  ExamPrince!
+                  Dumps-Collections!
                 </b>
               </p>
             </div>

@@ -209,7 +209,7 @@ const TeAccess = ({ params }) => {
                   width="1.7em"
                   height="1.4em"
                 />
-                Download .ExamPrinceFile
+                Download .Dumps-Collections File
               </span>
             </button>
           </Link>
@@ -244,10 +244,10 @@ const TeAccess = ({ params }) => {
           How To Use?
         </Typography>
         <Typography className="text-gray-700" fontWeight={600}>
-          Download the ExamPrinceTest Engine Simulator and install it, then
-          download the premium .ExamPrincefile using above yellow button and you
-          will get .zip file, unzip it, and add it to ExamPrinceTest Engine
-          Simulator. Activate the premium .ExamPrincefile with above purchase
+          Download the Dumps-Collections Test Engine Simulator and install it, then
+          download the premium .Dumps-Collections file using above yellow button and you
+          will get .zip file, unzip it, and add it to Dumps-Collections Test Engine
+          Simulator. Activate the premium .Dumps-Collections file with above purchase
           and activation keys.
         </Typography>
       </Box>

@@ -31,7 +31,7 @@ const RefundPolicyCard = () => {
           fontSize={18}
           className="text-gray-700"
         >
-          ExamPrince.com has a remarkable success record. We&apos;re confident
+          Dumps-Collections.com has a remarkable success record. We&apos;re confident
           of our products and provide a no hassle refund policy.
         </Typography>
       </CardContent>

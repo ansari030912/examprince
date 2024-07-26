@@ -84,7 +84,7 @@ const ArticleCard = ({ examData }) => {
                 {examData.exam_vendor_title} significantly boosts your
                 marketability and opens doors to exciting opportunities.
                 Achieving this recognized credential expands your career options
-                and increases your earning potential. ExamPrince practice tests
+                and increases your earning potential. Dumps-Collections practice tests
                 provide the most efficient way to prepare for and pass your{" "}
                 {examData.exam_title} exam on the first try.
               </p>
@@ -141,7 +141,7 @@ const ArticleCard = ({ examData }) => {
               </h3>
               <p class="mb-14 text-base md:text-lg text-gray-500">
                 Exam candidates are always interested in learning about the
-                structure and nature of exam questions. ExamPrince resources
+                structure and nature of exam questions. Dumps-Collections resources
                 address this by providing an overview of the format and types of
                 questions you can expect on the {examData.exam_title} exam.
               </p>
@@ -149,7 +149,7 @@ const ArticleCard = ({ examData }) => {
                 Trustworthy and Up-to-Date Content
               </h3>
               <p class="mb-14 text-base md:text-lg text-gray-500">
-                ExamPrince{" "}
+                Dumps-Collections{" "}
                 {examData?.exam_certs?.map((item, index) => (
                   <span
                     key={index}
@@ -169,7 +169,7 @@ const ArticleCard = ({ examData }) => {
                 professionals. You can be confident that you&apos;re receiving
                 high-quality information and not wasting time on irrelevant or
                 outdated material. Customer feedback consistently ranks
-                ExamPrince{" "}
+                Dumps-Collections{" "}
                 {examData?.exam_certs?.map((item, index) => {
                   {
                     item.cert_name;
@@ -182,7 +182,7 @@ const ArticleCard = ({ examData }) => {
                 Pass Your {examData.exam_title} Exam with Confidence
               </h3>
               <p class="mb-4 text-base md:text-lg text-gray-500">
-                With ExamPrince exceptional IT exam preparation materials, you
+                With Dumps-Collections exceptional IT exam preparation materials, you
                 can be sure of your success in your chosen {examData.exam_title}{" "}
                 exam. We offer a 100% money-back guarantee. Exam Prince serves a
                 vast network of customers with state-of-the-art and exam-focused

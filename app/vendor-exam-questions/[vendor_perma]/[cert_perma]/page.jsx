@@ -45,7 +45,7 @@ const CertificationExamPage = async ({ params }) => {
             "@context": "https://schema.org/",
             "@type": "Product",
             name: data?.cert_title,
-            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            description: `Dumps-Collections is a premium provider of Real and Valid Exam Question and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
             review: {
               "@type": "Review",
               reviewRating: {
@@ -380,7 +380,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `Updated ${data.cert_title} Exam Questions and Answers by Tech Professionals`,
-    description: `Examprince is a premium provider of Real and Valid Exam Questions and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    description: `Dumps-Collections is a premium provider of Real and Valid Exam Questions and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     robots: {
       index: shouldIndex,
     },

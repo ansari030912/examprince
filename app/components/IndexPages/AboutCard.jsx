@@ -17,7 +17,7 @@ const AboutCard = () => {
         className="text-gray-800"
         sx={{ textAlign: "center" }}
       >
-        HOW TO OPEN TEST ENGINE .EXAMPRINCEFILES
+        HOW TO OPEN TEST ENGINE .Dumps-Collections FILES
       </Typography>
       <Typography
         variant="body2"

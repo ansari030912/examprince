@@ -21,12 +21,12 @@ const FooterBar = () => {
                   backgroundColor: "rgb(252, 252, 252)",
                 }}
               >
-                ExamPrince does not provide real Microsoft exam questions.
-                Similarly, ExamPrince does not supply real Amazon exam
-                questions. The materials offered by ExamPrince lack real
+                Dumps-Collections does not provide real Microsoft exam questions.
+                Similarly, Dumps-Collections does not supply real Amazon exam
+                questions. The materials offered by Dumps-Collections lack real
                 questions and answers of certification exams. The CFA Institute
                 neither endorses nor assures the accuracy or quality of
-                ExamPrince content. CFA® and Chartered Financial Analyst® are
+                Dumps-Collections content. CFA® and Chartered Financial Analyst® are
                 registered trademarks held by the CFA Institute.
               </span>
             </p>
@@ -87,7 +87,7 @@ const FooterBar = () => {
         <div class="flex flex-wrap items-center py-4 ">
           <div class="w-full md:w-1/2 mb-6 md:mb-0">
             <p class="text-gray-700 font-medium">
-              © 2024 ExamPrince.com - All Rights Reserved
+              © 2024 Dumps-Collections.com - All Rights Reserved
             </p>
           </div>
           <div class="w-full md:w-1/2">
@@ -124,7 +124,7 @@ const FooterBar = () => {
                   <path fill="none" d="M0 0h36v36H0z" />
                 </svg>
                 <p className="ml-1 text-gray-700 font-medium">
-                  sales@examprince.com
+                  sales@dumps-collections.com
                 </p>
               </div>
             </div>

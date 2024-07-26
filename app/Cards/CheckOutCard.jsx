@@ -469,7 +469,7 @@ const CheckOutCard = () => {
                       sx={{ textAlign: "center" }}
                       className="text-gray-700 hover:text-blue-400 cursor-pointer hover:underline text-center"
                     >
-                      How to Open Test Engine .ExamPrinceFiles
+                      How to Open Test Engine .dumpscollections
                     </Typography>
                   </Link>
                   <Typography
@@ -477,7 +477,7 @@ const CheckOutCard = () => {
                     variant="body1"
                     className="text-gray-700 text-center mb-2"
                   >
-                    Use FREE ExamPrinceTest Engine player to open .dumpsarena
+                    Use FREE Dumps Collections Test Engine player to open .dumpscollections
                     files
                   </Typography>
                 </div>
