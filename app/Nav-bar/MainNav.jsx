@@ -176,10 +176,9 @@ const MainNav = () => {
               <div className="flex flex-wrap items-center w-auto p-2">
                 <Link className="block max-w-max xl:mr-12" href="/">
                   <img
-                    src="/img/examprince_dark_svg.svg"
+                    src="/img/dumpscollections_dark.png"
                     alt=""
-                    height={"120px"}
-                    width={"170px"}
+                   className="h-12 w-46"
                   />
                 </Link>
                 <ul className="hidden xl:flex flex-nowrap">
@@ -516,7 +515,7 @@ const MainNav = () => {
               <div className="fixed flex justify-between -left-1 p-4 pl-6 -my-4  max-w-xs w-11/12 z-50 bg-gray-50">
                 <span className="block mt-5  max-w-max" href="#">
                   <img
-                    src="/img/examprince_dark_svg.svg"
+                    src="/img/dumpscollections_dark.png"
                     alt=""
                     height={"170px"}
                     width={"170px"}

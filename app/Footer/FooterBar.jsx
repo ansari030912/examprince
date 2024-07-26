@@ -9,7 +9,7 @@ const FooterBar = () => {
         <div class="flex flex-wrap lg:items-center pt-12 pb-12 px-2 md:px-0 -mx-4">
           <div class="w-full md:w-3/4 px-4">
             <Link class="block mb-8 max-w-max" href="/">
-              <img class="h-5" src="/img/examprince_dark_svg.svg" alt="" />
+              <img class="h-16 w-50" src="/img/dumpscollections_dark.png" alt="" />
             </Link>
             <p class="mb-8 text-base md:text-lg text-justify text-gray-600 font-medium">
               <span
