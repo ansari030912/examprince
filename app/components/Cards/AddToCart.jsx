@@ -242,7 +242,7 @@ const AddToCart = ({ examData }) => {
                 >
                   New exam code :{" "}
                   <Link
-                    href={`/exam-questions/${examData?.exam_vendor_perma}/${examData?.exam_alternate?.exam_alternate_perma}`}
+                    href={`/mock-exam/${examData?.exam_vendor_perma}/${examData?.exam_alternate?.exam_alternate_perma}`}
                     // style={{ color: "blue" }}
                     className="hover:text-blue-700 text-blue-600 hover:underline"
                   >

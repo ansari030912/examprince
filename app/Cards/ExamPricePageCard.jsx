@@ -116,7 +116,7 @@ const ExamPricePageCard = ({ data }) => {
                     >
                       New exam code :{" "}
                       <Link
-                        href={`/exam-questions/${data?.exam_vendor_perma}/${data?.exam_alternate?.exam_alternate_perma}`}
+                        href={`/mock-exam/${data?.exam_vendor_perma}/${data?.exam_alternate?.exam_alternate_perma}`}
                         // style={{ color: "blue" }}
                         className="hover:text-blue-600  text-blue-500 hover:underline"
                       >

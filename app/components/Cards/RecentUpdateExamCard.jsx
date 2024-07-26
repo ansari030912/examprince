@@ -42,7 +42,7 @@ const RecentUpdateExamCard = ({ data }) => {
                                 <div class="flex-shrink-1">
                                   <h4 class="font-heading text-wrap font-medium leading-4 text-blue-400 hover:text-blue-600">
                                     <Link
-                                      href={`/exam-questions/${item.exam_vendor_perma}/${item.exam_perma}`}
+                                      href={`/mock-exam/${item.exam_vendor_perma}/${item.exam_perma}`}
                                       className="text-lg text-gray-600"
                                     >
                                       {item.exam_vendor_title} -{" "}
@@ -50,7 +50,7 @@ const RecentUpdateExamCard = ({ data }) => {
                                     </Link>
                                     <br />
                                     <Link
-                                      href={`/exam-questions/${item.exam_vendor_perma}/${item.exam_perma}`}
+                                      href={`/mock-exam/${item.exam_vendor_perma}/${item.exam_perma}`}
                                       className="text-sm"
                                     >
                                       {item.exam_title}

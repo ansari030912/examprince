@@ -103,7 +103,7 @@ const MainNav = () => {
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
-    router.push(`/exam-questions/${exam.vendor}/${exam.slug}`);
+    router.push(`/mock-exam/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
