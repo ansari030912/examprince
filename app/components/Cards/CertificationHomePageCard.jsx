@@ -354,7 +354,7 @@ export default function Home() {
                 }}
               >
                 <Link
-                  href={`/vendor-mock-exam/${item.vendorPerma}/${item.perma}`}
+                  href={`/vendor-exam-questions/${item.vendorPerma}/${item.perma}`}
                 >
                   <CardContent>
                     <Typography

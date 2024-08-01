@@ -4,17 +4,24 @@ import { Base_URL } from "@/app/URL's/Base_URL";
 import SingleVendorExamAndCertCard from "@/app/components/Cards/SingleVendorExamAndCertCard";
 
 export async function generateMetadata({ params }) {
+  const response = await fetch(`${Base_URL}/v1/vendor/${params.vendor_perma}`, {
+    headers: {
+      "x-api-key": X_API_Key,
+    },
+  });
+
+  const metaDATA = await response.json();
   return {
-    title: `Updated ${params.vendor_perma} Exam Question and Answers by Tech Professionals`,
-    description: `Dumps-Collections is a premium provider of Real and Valid Exam Question and Answers of ${params.cert_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    title: `Updated ${params.vendor_perma} Exam Questions and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${params.vendor_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
     robots: {
-      index: false,
+      index: metaDATA?.index_tag,
     },
     icons: {
       other: [
         {
           rel: "canonical",
-          url: `https://examaster.netlify.app/exam-provider/${params.vendor_perma}`,
+          url: `https://examprince.com/exam-provider/${params?.vendor_perma}`,
         },
       ],
     },

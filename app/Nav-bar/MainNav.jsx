@@ -1,12 +1,12 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { Avatar, Box, Card, IconButton } from "@mui/material";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Base_URL } from "../URL's/Base_URL";
-import { X_API_Key } from "../URL's/Api_X_Key";
+import { Avatar, Card, IconButton } from "@mui/material";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { X_API_Key } from "../URL's/Api_X_Key";
+import { Base_URL } from "../URL's/Base_URL";
 
 const MainNav = () => {
   const router = useRouter();
@@ -103,7 +103,7 @@ const MainNav = () => {
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
-    router.push(`/mock-exam/${exam.vendor}/${exam.slug}`);
+    router.push(`/exam-questions/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
@@ -111,7 +111,7 @@ const MainNav = () => {
     setSearchValue("");
   };
   const handleCertificationPage = (exam) => {
-    router.push(`/vendor-mock-exam/${exam.vendor}/${exam.slug}`);
+    router.push(`/vendor-exam-questions/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
 
@@ -425,22 +425,22 @@ const MainNav = () => {
                               Products
                             </li>
                           </Link>
-                          <Link href={"/profile/products"}>
+                          <Link href={"/profile/invoices"}>
                             <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
                               Invoice
                             </li>
                           </Link>
-                          <Link href={"/profile/products"}>
+                          <Link href={"/profile/setting"}>
                             <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
                               Setting
                             </li>
                           </Link>
-                          <Link href={"/profile/products"}>
+                          <Link href={"/profile/download-history"}>
                             <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
                               Download History
                             </li>
                           </Link>
-                          <Link href={"/profile/products"}>
+                          <Link href={"/profile/login-history"}>
                             <li className="px-1 py-2 font-semibold hover:bg-gray-100 hover:text-green-500 cursor-pointer">
                               Login History
                             </li>

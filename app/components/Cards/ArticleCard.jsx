@@ -106,7 +106,7 @@ const ArticleCard = ({ examData }) => {
                       className="mb-4 text-lg md:text-xl leading-tight font-medium text-blue-500 hover:text-blue-600"
                     >
                       <Link
-                        href={`/vendor-mock-exam/${examData.exam_vendor_perma}/${item.cert_perma}`}
+                        href={`/vendor-exam-questions/${examData.exam_vendor_perma}/${item.cert_perma}`}
                       >
                         {item.cert_name}
                         <br />
@@ -156,7 +156,7 @@ const ArticleCard = ({ examData }) => {
                     className="mb-4 text-lg md:text-xl leading-tight font-medium text-blue-500 hover:text-blue-600"
                   >
                     <Link
-                      href={`/vendor-mock-exam/${examData.exam_vendor_perma}/${item.cert_perma}`}
+                      href={`/vendor-exam-questions/${examData.exam_vendor_perma}/${item.cert_perma}`}
                     >
                       {item.cert_name},{" "}
                     </Link>

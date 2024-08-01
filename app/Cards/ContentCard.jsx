@@ -241,7 +241,7 @@ export default function ContentCard({ data, referral }) {
             {Array.isArray(data.exam_certs) &&
               data?.exam_certs?.map((item) => (
                 <Link
-                  href={`/vendor-mock-exam/${data?.exam_vendor_perma}/${item?.cert_perma}`}
+                  href={`/vendor-exam-questions/${data?.exam_vendor_perma}/${item?.cert_perma}`}
                   key={item.cert_id}
                 >
                   <Card

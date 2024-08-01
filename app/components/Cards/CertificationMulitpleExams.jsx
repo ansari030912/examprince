@@ -126,7 +126,7 @@ const CertificationMulitpleExams = ({ data }) => {
             }}
           >
             <Link
-              href={`/mock-exam/${item?.exam_vendor_perma}/${item.exam_perma}`}
+              href={`/exam-questions/${item?.exam_vendor_perma}/${item.exam_perma}`}
               className="group hover:text-blue-500 cursor-pointer"
             >
               <div className="flex justify-center">

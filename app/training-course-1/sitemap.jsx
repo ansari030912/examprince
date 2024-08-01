@@ -13,7 +13,7 @@ export default async function sitemap() {
   
 
   return data.map((item) => ({
-    url: `https://examaster.netlify.app/training-course/${item.course_perma}`,
+    url: `https://examprince.com/training-course/${item.course_perma}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));

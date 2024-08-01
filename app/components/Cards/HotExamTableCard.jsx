@@ -82,14 +82,14 @@ const HotExamTableCard = ({ data }) => {
                           <div class="flex-shrink-1">
                             <h4 class="font-heading text-wrap font-medium leading-4 text-blue-400 hover:text-blue-600">
                               <Link
-                                href={`/mock-exam/${item.vendor_perma}/${item.exam_perma}`}
+                                href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
                                 className="text-xs md:text-base text-gray-600"
                               >
                                 <b>{item.exam_title}</b>
                               </Link>
                               <br />
                               <Link
-                                href={`/mock-exam/${item.vendor_perma}/${item.exam_perma}`}
+                                href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
                                 className="text-xs md:text-base"
                               >
                                 {item.vendor_title}

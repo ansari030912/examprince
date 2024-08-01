@@ -85,7 +85,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examaster.netlify.app/mock-exam/${params.vendor_perma}/${params.exam_perma}`,
+          url: `https://examprince.com/exam-questions/${params.vendor_perma}/${params.exam_perma}`,
         },
       ],
     },

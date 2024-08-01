@@ -57,7 +57,7 @@ const HotExamCards = ({ data }) => {
             <div style={{ alignSelf: "stretch" }}>
               <hr className="mb-2" />
               <Link
-                href={`/mock-exam/${item.vendor_perma}/${item.exam_perma}`}
+                href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
                 className="inline-flex group w-full -mb-1 py-2 px-2 items-center justify-center text-base font-medium text-green-500 hover:text-white border border-green-500 hover:bg-green-500 rounded-full transition duration-200"
               >
                 <span className="mr-2">Buy Now</span>
