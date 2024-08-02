@@ -18,14 +18,29 @@ const ExamAddToCart = ({ examData }) => {
                   class="group flex-1"
                 >
                   <div
-                    class="relative overflow-hidden rounded-xl flex flex-col justify-center transition duration-200"
+                    class="relative xl:hidden overflow-hidden rounded-xl flex flex-col justify-center transition duration-200"
                     style={{
                       height: "300px",
                       width: "300px",
                     }}
                   >
                     <img
-                      class="absolute inset-0 rounded-xl w-full h-full transform group-hover:scale-105 transition duration-200"
+                      style={{ width: "300px", height: "300px" }}
+                      class="absolute inset-0 rounded-xl transform group-hover:scale-105 transition duration-200"
+                      src="/package-small-min_optimized.png"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="relative hidden xl:inline-flex overflow-hidden rounded-xl flex-col justify-center transition duration-200"
+                    style={{
+                      height: "300px",
+                      width: "420px",
+                    }}
+                  >
+                    <img
+                      style={{ width: "420px", height: "300px" }}
+                      class="absolute inset-0 rounded-xl transform group-hover:scale-105 transition duration-200"
                       src="/package-small-min_optimized.png"
                       alt=""
                     />

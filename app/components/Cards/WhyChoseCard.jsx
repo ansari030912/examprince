@@ -15,10 +15,10 @@ const WhyChoseCard = () => {
                 Why Chose Exam Prince
               </span>
               <h1 class="font-heading mb-6 text-3xl lg:text-5xl text-gray-900 font-black tracking-tight">
-                Master Your IT Skills with Dumps-Collections!
+                Master Your IT Skills with ExamPrince!
               </h1>
               <p class="mb-2 text-xl font-semibold text-gray-600">
-                Dominate your IT certification goals with Dumps-Collections! We provide
+                Dominate your IT certification goals with ExamPrince! We provide
                 up-to-date practice exams for various certifications, designed
                 by industry experts. Identify knowledge gaps, refine your
                 understanding, and conquer your exam with confidence. Get

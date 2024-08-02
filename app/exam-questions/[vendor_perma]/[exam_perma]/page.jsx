@@ -77,7 +77,7 @@ export async function generateMetadata({ params }) {
   const data = await response.json();
   return {
     title: `Updated ${data.exam_title} Exam Question and Answers by Tech Professionals`,
-    description: `Dumps-Collections is a premium provider of Real and Valid Exam Question and Answers of ${data.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     robots: {
       index: data.index_tag ? data.index_tag : false,
     },

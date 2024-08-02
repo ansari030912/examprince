@@ -1,5 +1,5 @@
 import React from "react";
-import CartCard from "../Cards/CartCard";
+import CartCard from "../components/Cards/CartCard";
 
 export async function generateMetadata() {
   return {
@@ -13,7 +13,7 @@ export async function generateMetadata() {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/check-out`,
+          url: `https://examprince.com/cart`,
         },
       ],
     },

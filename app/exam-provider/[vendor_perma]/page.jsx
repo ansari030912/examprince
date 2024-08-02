@@ -56,7 +56,7 @@ const page = async ({ params }) => {
             "@context": "https://schema.org/",
             "@type": "Product",
             name: data?.vendor_title,
-            description: `Dumps-Collections is a premium provider of Real and Valid Exam Question and Answers of ${data?.vendor_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data?.vendor_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
             review: {
               "@type": "Review",
               reviewRating: {

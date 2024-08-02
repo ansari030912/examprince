@@ -138,7 +138,7 @@ const LoginForm = () => {
                 <input
                   class="appearance-none block w-full p-3 leading-5 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                   type="name"
-                  placeholder="dev@shuffle.dev"
+                  placeholder="email@example.com"
                   onChange={(e) => {
                     setEmail(e.target.value), setEmailError("");
                   }}
@@ -169,7 +169,7 @@ const LoginForm = () => {
                 <div class="w-full md:w-auto mt-1">
                   <Link
                     class="inline-block text-xs font-medium text-green-500 hover:text-green-600"
-                    href="#"
+                    href="/forgot-password"
                   >
                     Forgot your password?
                   </Link>

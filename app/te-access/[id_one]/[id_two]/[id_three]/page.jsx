@@ -1,7 +1,6 @@
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-"use client";
-
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
 import { Icon } from "@iconify/react";
@@ -209,7 +208,7 @@ const TeAccess = ({ params }) => {
                   width="1.7em"
                   height="1.4em"
                 />
-                Download .Dumps-Collections File
+                Download .ExamPrince File
               </span>
             </button>
           </Link>
@@ -244,11 +243,11 @@ const TeAccess = ({ params }) => {
           How To Use?
         </Typography>
         <Typography className="text-gray-700" fontWeight={600}>
-          Download the Dumps-Collections Test Engine Simulator and install it, then
-          download the premium .Dumps-Collections file using above yellow button and you
-          will get .zip file, unzip it, and add it to Dumps-Collections Test Engine
-          Simulator. Activate the premium .Dumps-Collections file with above purchase
-          and activation keys.
+          Download the ExamPrince Test Engine Simulator and install it,
+          then download the premium .ExamPrince file using above yellow
+          button and you will get .zip file, unzip it, and add it to
+          ExamPrince Test Engine Simulator. Activate the premium
+          .ExamPrince file with above purchase and activation keys.
         </Typography>
       </Box>
     </div>

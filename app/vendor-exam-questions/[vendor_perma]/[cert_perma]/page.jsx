@@ -8,6 +8,39 @@ import HotExams from "@/app/components/IndexPages/HotExams";
 import LogoBanner from "@/app/components/IndexPages/LogoBanner";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const response = await fetch(
+    `${Base_URL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
+    {
+      headers: {
+        "x-api-key": X_API_Key,
+      },
+    }
+  );
+
+  const data = await response.json();
+  let shouldIndex = true;
+  if (data.cert_title === null) {
+    shouldIndex = false;
+  }
+
+  return {
+    title: `Updated ${data.cert_title} Exam Questions and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Questions and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    robots: {
+      index: shouldIndex,
+    },
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/vendor-exam-questions/${params.vendor_perma}/${params.cert_perma}`,
+        },
+      ],
+    },
+  };
+}
+
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
     `${Base_URL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
@@ -45,7 +78,7 @@ const CertificationExamPage = async ({ params }) => {
             "@context": "https://schema.org/",
             "@type": "Product",
             name: data?.cert_title,
-            description: `Dumps-Collections is a premium provider of Real and Valid Exam Question and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
             review: {
               "@type": "Review",
               reviewRating: {
@@ -77,21 +110,36 @@ const CertificationExamPage = async ({ params }) => {
           <section class="my-10 px-6 bg-white">
             <div className="container mx-auto">
               <div class="flex flex-wrap -m-4 mb-12">
-                <div class="w-full lg:w-4/12 p-10">
-                  <div class="flex items-end gap-6">
+                <div class="w-full lg:w-4/12 p-12">
+                  <div class="flex items-end gap-2">
                     <span
                       style={{ display: "flex", justifyContent: "center" }}
                       class="group flex-1"
                     >
                       <div
-                        class="relative overflow-hidden rounded-xl transition duration-200"
+                        class="relative xl:hidden overflow-hidden rounded-xl flex flex-col justify-center transition duration-200"
                         style={{
                           height: "300px",
                           width: "300px",
                         }}
                       >
                         <img
-                          class="absolute inset-0 rounded-xl w-full h-full transform group-hover:scale-105 transition duration-200"
+                          style={{ width: "300px", height: "300px" }}
+                          class="absolute inset-0 rounded-xl transform group-hover:scale-105 transition duration-200"
+                          src="/package-small-min_optimized.png"
+                          alt=""
+                        />
+                      </div>
+                      <div
+                        class="relative hidden xl:inline-flex overflow-hidden rounded-xl flex-col justify-center transition duration-200"
+                        style={{
+                          height: "300px",
+                          width: "420px",
+                        }}
+                      >
+                        <img
+                          style={{ width: "420px", height: "300px" }}
+                          class="absolute inset-0 rounded-xl transform group-hover:scale-105 transition duration-200"
                           src="/package-small-min_optimized.png"
                           alt=""
                         />
@@ -224,21 +272,36 @@ const CertificationExamPage = async ({ params }) => {
           <section class="pt-6 px-6 bg-white">
             <div className="container mx-auto">
               <div class="flex flex-wrap -m-4 mb-12">
-                <div class="w-full lg:w-4/12 p-6">
-                  <div class="flex items-end gap-6">
+                <div class="w-full lg:w-4/12 p-12">
+                  <div class="flex items-end gap-2">
                     <span
                       style={{ display: "flex", justifyContent: "center" }}
                       class="group flex-1"
                     >
                       <div
-                        class="relative overflow-hidden rounded-xl transition duration-200"
+                        class="relative xl:hidden overflow-hidden rounded-xl flex flex-col justify-center transition duration-200"
                         style={{
-                          height: "270px",
-                          width: "270px",
+                          height: "300px",
+                          width: "300px",
                         }}
                       >
                         <img
-                          class="absolute inset-0 rounded-xl w-full h-full transform group-hover:scale-105 transition duration-200"
+                          style={{ width: "300px", height: "300px" }}
+                          class="absolute inset-0 rounded-xl transform group-hover:scale-105 transition duration-200"
+                          src="/package-small-min_optimized.png"
+                          alt=""
+                        />
+                      </div>
+                      <div
+                        class="relative hidden xl:inline-flex overflow-hidden rounded-xl flex-col justify-center transition duration-200"
+                        style={{
+                          height: "300px",
+                          width: "420px",
+                        }}
+                      >
+                        <img
+                          style={{ width: "420px", height: "300px" }}
+                          class="absolute inset-0 rounded-xl transform group-hover:scale-105 transition duration-200"
                           src="/package-small-min_optimized.png"
                           alt=""
                         />
@@ -361,36 +424,3 @@ const CertificationExamPage = async ({ params }) => {
 };
 
 export default CertificationExamPage;
-
-export async function generateMetadata({ params }) {
-  const response = await fetch(
-    `${Base_URL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
-    {
-      headers: {
-        "x-api-key": X_API_Key,
-      },
-    }
-  );
-
-  const data = await response.json();
-  let shouldIndex = true;
-  if (data.cert_title === null) {
-    shouldIndex = false;
-  }
-
-  return {
-    title: `Updated ${data.cert_title} Exam Questions and Answers by Tech Professionals`,
-    description: `Dumps-Collections is a premium provider of Real and Valid Exam Questions and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
-    robots: {
-      index: shouldIndex,
-    },
-    icons: {
-      other: [
-        {
-          rel: "canonical",
-          url: `https://examprince.com/vendor-exam-questions/${params.vendor_perma}/${params.cert_perma}`,
-        },
-      ],
-    },
-  };
-}

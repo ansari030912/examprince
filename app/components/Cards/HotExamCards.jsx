@@ -11,7 +11,8 @@ const HotExamCards = ({ data }) => {
 
   const renderRows = (items) => {
     return items?.slice(0, 10)?.map((item, index) => {
-      const { vendor_title, exam_title, exam_perma, vendor_perma } = item;
+      const { vendor_title, exam_title, exam_perma, vendor_perma, exam_code } =
+        item;
       return (
         <Grid
           item
@@ -40,8 +41,9 @@ const HotExamCards = ({ data }) => {
           >
             <div style={{ flexGrow: 1 }}>
               <div>
-                <p className="text-base text-gray-800 font-bold mb-2">
-                  {vendor_title}
+                <p className="text-base flex justify-between text-gray-800 font-bold mb-2">
+                  <span>{vendor_title}</span>
+                  <span className="text-green-500 font-semibold">{exam_code}</span>
                 </p>
                 <hr className="mt-2" />
                 <span className="block text-sm text-gray-600 font-bold mt-3 mb-6">

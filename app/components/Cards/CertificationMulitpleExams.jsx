@@ -132,7 +132,10 @@ const CertificationMulitpleExams = ({ data }) => {
               <div className="flex justify-center">
                 <div
                   className="relative overflow-hidden rounded-xl mb-6"
-                  style={{ height: "270px", width: "230px" }}
+                  style={{
+                    height: "270px",
+                    width: "300px",
+                  }}
                 >
                   <span>
                     <img

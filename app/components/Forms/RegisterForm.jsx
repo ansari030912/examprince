@@ -159,7 +159,7 @@ const RegisterForm = () => {
                   type="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Jane Foster"
+                  placeholder="Your Name"
                 />
               </div>
               <div class="mb-6">
@@ -231,14 +231,14 @@ const RegisterForm = () => {
                 )}
               </div>
               <div class="flex flex-wrap items-center justify-end mb-2">
-                <div class="w-full md:w-auto mt-1">
+                {/* <div class="w-full md:w-auto mt-1">
                   <a
                     class="inline-block text-base font-medium text-green-500 hover:text-green-600"
                     href="#"
                   >
                     Forgot your password?
                   </a>
-                </div>
+                </div> */}
               </div>
               <hr className="my-3" />
               <div class="w-full p-2 -mt-2">

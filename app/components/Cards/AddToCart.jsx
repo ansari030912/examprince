@@ -21,10 +21,12 @@ const AddToCart = ({ examData }) => {
   const [cartPlan, setCartPlan] = useState({});
 
   const handleBoxClick = (item) => {
-    localStorage.removeItem("CartExamData");
-    localStorage.setItem("CartExamData", JSON.stringify(examData));
-    localStorage.removeItem("ExamCartAdded");
-    localStorage.setItem("ExamCartAdded", JSON.stringify(item));
+    const cartData = {
+      cart: item.cart,
+      saveExam: true,
+    };
+    localStorage.removeItem("CartProducts");
+    localStorage.setItem("CartProducts", JSON.stringify(cartData));
     setSnackbarOpen(true);
   };
 
@@ -53,7 +55,58 @@ const AddToCart = ({ examData }) => {
       <div class="w-full lg:w-12/12 p-4 ">
         <Grid container spacing={2}>
           <Grid item xs={12} md={5}>
-            <p class="text-xl font-bold text-gray-700 mb-4">Select Product</p>
+            <div className="lg:pr-5 pt-1 pb-7">
+              <Link
+                href="https://dumpsarena.com/demo-dl-pdf/b4c987ceb5d044d3a150b3c4f217d70e"
+                class="bg-purple-600 rounded-full hover:bg-purple-800 focus:ring-4 focus:ring-gray-200 text-white font-semibold h-10 w-full px-7 py-4 flex items-center justify-center gap-2 transition duration-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      fill="none"
+                      stroke-dasharray="14"
+                      stroke-dashoffset="14"
+                      d="M6 19h12"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.4s"
+                        values="14;0"
+                      />
+                    </path>
+                    <path
+                      fill="currentColor"
+                      d="M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5"
+                    >
+                      <animate
+                        attributeName="d"
+                        calcMode="linear"
+                        dur="1.5s"
+                        keyTimes="0;0.7;1"
+                        repeatCount="indefinite"
+                        values="M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5;M12 4 h2 v3 h2.5 L12 11.5M12 4 h-2 v3 h-2.5 L12 11.5;M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5"
+                      />
+                    </path>
+                  </g>
+                </svg>
+                <span style={{ fontSize: "16px" }}>Download PDF Demo</span>
+              </Link>
+            </div>
+            <div className="lg:ml-2 lg:mr-8 mb-4 w-95 border-t-2"></div>
+            <p class="text-xl font-bold text-gray-700 mb-4">
+              Select Product
+            </p>
             <Grid
               container
               spacing={2}
@@ -189,7 +242,9 @@ const AddToCart = ({ examData }) => {
                   <ol className="list-disc pl-4 text-base mb-2 text-gray-500">
                     <li>Guaranteed To Have Actual PDF</li>
                   </ol>
-                  <h6 className="text-2xl text-gray-600 font-semibold">Material</h6>
+                  <h6 className="text-2xl text-gray-600 font-semibold">
+                    Material
+                  </h6>
                   <ol className="list-disc pl-4 text-base mb-2 text-gray-500">
                     <li> Verified By IT Certified Experts</li>
                     <li>100% Accurate Answers</li>
@@ -275,52 +330,6 @@ const AddToCart = ({ examData }) => {
             )}
             <hr style={{ border: "1px solid #F5F6FA", marginBottom: "20px" }} />
             <div>
-              <Link
-                href="https://dumpsarena.com/demo-dl-pdf/b4c987ceb5d044d3a150b3c4f217d70e"
-                class="bg-blue-600 rounded-full hover:bg-blue-800 focus:ring-4 focus:ring-gray-200 text-white font-semibold h-10 w-full px-7 py-4 flex items-center justify-center gap-2 transition duration-200"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  >
-                    <path
-                      fill="none"
-                      stroke-dasharray="14"
-                      stroke-dashoffset="14"
-                      d="M6 19h12"
-                    >
-                      <animate
-                        fill="freeze"
-                        attributeName="stroke-dashoffset"
-                        dur="0.4s"
-                        values="14;0"
-                      />
-                    </path>
-                    <path
-                      fill="currentColor"
-                      d="M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5"
-                    >
-                      <animate
-                        attributeName="d"
-                        calcMode="linear"
-                        dur="1.5s"
-                        keyTimes="0;0.7;1"
-                        repeatCount="indefinite"
-                        values="M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5;M12 4 h2 v3 h2.5 L12 11.5M12 4 h-2 v3 h-2.5 L12 11.5;M12 4 h2 v6 h2.5 L12 14.5M12 4 h-2 v6 h-2.5 L12 14.5"
-                      />
-                    </path>
-                  </g>
-                </svg>
-                <span style={{ fontSize: "16px" }}>Download PDF Demo</span>
-              </Link>
               <span class="font-heading text-lg my-4 pl-4 text-gray-600 font-semibold flex justify-between items-center">
                 Actual Amount :{" "}
                 <span

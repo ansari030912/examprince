@@ -5,6 +5,24 @@ import { Base_URL } from "@/app/URL's/Base_URL";
 import VideoCourseAccordian from "@/app/components/Cards/VideoCourseAccordian";
 import VideoTrainingCourseAddToCart from "@/app/components/Cards/VideoTrainingCourseAddToCart";
 
+export async function generateMetadata({ params }) {
+  return {
+    title: `Updated Certificates Exam Question and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    robots: {
+      index: true,
+    },
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/training-course/${params.vendor_perma}`,
+        },
+      ],
+    },
+  };
+}
+
 const page = async ({ params }) => {
   const response = await fetch(
     `${Base_URL}/v1/training-course/${params.vendor_perma}/?coupon=MEGASALE-30`,
@@ -205,7 +223,7 @@ const page = async ({ params }) => {
                   <span class="flex items-center text-6xl text-gray-400 font-heading font-medium">
                     <span className="text-4xl">/</span>
                   </span>
-                  <span class="relative left-1 text-gray-300 font-heading font-medium line-through">
+                  <span class="relative left-1 text-red-500 font-heading font-medium line-through">
                     ${data.full_price}
                   </span>
                 </p>

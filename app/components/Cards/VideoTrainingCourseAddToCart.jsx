@@ -4,39 +4,17 @@ import { Snackbar, SnackbarContent } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const VideoTrainingCourseAddToCart = ({ data }) => {
-  const [addCart, setAddCart] = useState({
-    cart: "",
-    full_price: "165.97",
-    off: "70",
-    price: "69.99",
-    title: "Full Premium Bundle",
-    type: 6,
-  });
-  const [productData, setProductData] = useState({
-    exam_title: "",
-  });
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
-  useEffect(() => {
-    setAddCart({
+  const handleBoxClick = (item) => {
+    const cartData = {
       cart: data.cart,
-      full_price: data.full_price,
-      off: "40",
-      price: data.price,
-      title: data.title,
-    });
-
-    setProductData({ exam_title: data.title });
-  }, [data]);
-
-  const handleBoxClick = () => {
-    localStorage.removeItem("CartExamData");
-    localStorage.setItem("CartExamData", JSON.stringify(productData));
-    localStorage.removeItem("ExamCartAdded");
-    localStorage.setItem("ExamCartAdded", JSON.stringify(addCart));
+      saveExam: true,
+    };
+    localStorage.removeItem("CartProducts");
+    localStorage.setItem("CartProducts", JSON.stringify(cartData));
     setSnackbarOpen(true);
   };
-
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };

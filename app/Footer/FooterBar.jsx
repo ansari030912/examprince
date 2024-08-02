@@ -9,7 +9,7 @@ const FooterBar = () => {
         <div class="flex flex-wrap lg:items-center pt-12 pb-12 px-2 md:px-0 -mx-4">
           <div class="w-full md:w-3/4 px-4">
             <Link class="block mb-8 max-w-max" href="/">
-              <img class="h-16 w-50" src="/img/dumpscollections_dark.png" alt="" />
+              <img class="h-5" src="/img/examprince_dark_svg.svg" alt="" />
             </Link>
             <p class="mb-8 text-base md:text-lg text-justify text-gray-600 font-medium">
               <span
@@ -21,12 +21,12 @@ const FooterBar = () => {
                   backgroundColor: "rgb(252, 252, 252)",
                 }}
               >
-                Dumps-Collections does not provide real Microsoft exam questions.
-                Similarly, Dumps-Collections does not supply real Amazon exam
-                questions. The materials offered by Dumps-Collections lack real
+                ExamPrince does not provide real Microsoft exam questions.
+                Similarly, ExamPrince does not supply real Amazon exam
+                questions. The materials offered by ExamPrince lack real
                 questions and answers of certification exams. The CFA Institute
                 neither endorses nor assures the accuracy or quality of
-                Dumps-Collections content. CFA® and Chartered Financial Analyst® are
+                ExamPrince content. CFA® and Chartered Financial Analyst® are
                 registered trademarks held by the CFA Institute.
               </span>
             </p>
@@ -87,7 +87,7 @@ const FooterBar = () => {
         <div class="flex flex-wrap items-center py-4 ">
           <div class="w-full md:w-1/2 mb-6 md:mb-0">
             <p class="text-gray-700 font-medium">
-              © 2024 Dumps-Collections.com - All Rights Reserved
+              © 2024 examprince.com - All Rights Reserved
             </p>
           </div>
           <div class="w-full md:w-1/2">
@@ -124,7 +124,7 @@ const FooterBar = () => {
                   <path fill="none" d="M0 0h36v36H0z" />
                 </svg>
                 <p className="ml-1 text-gray-700 font-medium">
-                  sales@dumps-collections.com
+                  sales@examprince.com
                 </p>
               </div>
             </div>

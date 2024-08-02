@@ -176,17 +176,17 @@ const MainNav = () => {
               <div className="flex flex-wrap items-center w-auto p-2">
                 <Link className="block max-w-max xl:mr-12" href="/">
                   <img
-                    src="/img/dumpscollections_dark.png"
+                    src="/img/examprince_dark_svg.svg"
                     alt=""
-                    className="h-12 w-46"
+                    className="h-5"
                   />
                 </Link>
                 <ul className="hidden xl:flex flex-nowrap">
                   <li className="mr-5">
                     <Link href={"/exam-providers"}>
-                      <span
+                      <Link
                         className="flex flex-wrap items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500"
-                        href="#"
+                        href="/exam-providers"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +211,7 @@ const MainNav = () => {
                         <p className="text-gray-600 font-bold">
                           Vendor & Certificate
                         </p>
-                      </span>
+                      </Link>
                     </Link>
                   </li>
                   <li className="relative group mr-5">
@@ -234,7 +234,7 @@ const MainNav = () => {
                     </Link>
                   </li>
                   <li className="relative group mr-5">
-                    <Link href={"/unlimited-access"}>
+                    <Link href={"#"}>
                       <span className="flex items-center py-6 text-sm font-medium text-gray-700 hover:text-green-500 border-b-2 border-transparent hover:border-green-500 cursor-pointer">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -511,11 +511,11 @@ const MainNav = () => {
             }
           >
             <div className="navbar-backdrop fixed xl:hidden inset-0 bg-white opacity-60"></div>
-            <div className="relative bg-white flex-1 border-gray-700 border-b">
+            <div className="relative bg-white flex-1 boLink-gray-700 border-b">
               <div className="fixed flex justify-between -left-1 p-4 pl-6 -my-4  max-w-xs w-11/12 z-50 bg-gray-50">
                 <span className="block mt-5  max-w-max" href="#">
                   <img
-                    src="/img/dumpscollections_dark.png"
+                    src="/img/examprince_dark_svg.svg"
                     alt=""
                     height={"170px"}
                     width={"170px"}
@@ -524,7 +524,7 @@ const MainNav = () => {
 
                 <div className="w-auto pr-3 pt-1 -mb-2">
                   <button
-                    onClick={closeNav}
+                    Linklick={closeNav}
                     className="text-gray-500 hover:text-gray-600 -mr-4 mt-3"
                     href="#"
                   >
@@ -691,7 +691,7 @@ const MainNav = () => {
                     </>
                   )}
                   <li>
-                    <span
+                    <Link
                       className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                       href="#"
                     >
@@ -713,11 +713,11 @@ const MainNav = () => {
                           Video Courses
                         </p>
                       </div>
-                    </span>
+                    </Link>
                   </li>
 
                   <li>
-                    <span
+                    <Link
                       className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                       href="#"
                     >
@@ -739,15 +739,15 @@ const MainNav = () => {
                           Unlimited Access
                         </p>
                       </div>
-                    </span>
+                    </Link>
                   </li>
                 </ul>
                 <p className="px-8 mb-2 text-xs font-medium text-gray-500 uppercase">
-                  Workspace
+                  Other Pages
                 </p>
                 <ul className="px-4 pb-8">
                   <li>
-                    <span
+                    <Link
                       className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                       href="#"
                     >
@@ -769,11 +769,11 @@ const MainNav = () => {
                           Customer Support
                         </p>
                       </div>
-                    </span>
+                    </Link>
                   </li>
 
                   <li>
-                    <span
+                    <Link
                       className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                       href="#"
                     >
@@ -794,10 +794,10 @@ const MainNav = () => {
                           Refund Policy
                         </p>
                       </div>
-                    </span>
+                    </Link>
                   </li>
                   <li>
-                    <span
+                    <Link
                       className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
                       href="#"
                     >
@@ -818,34 +818,8 @@ const MainNav = () => {
                           Test Engine
                         </p>
                       </div>
-                    </span>
+                    </Link>
                   </li>
-                  {loginResponse?.is_logged_in === true ? (
-                    ""
-                  ) : (
-                    <li>
-                      <span
-                        className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
-                        href="#"
-                      >
-                        <div className="flex items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="mr-2"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 2048 2048"
-                          >
-                            <path
-                              fill="currentColor"
-                              d="M453 512q110-123 258-189t313-67q32 0 64 3t64 8v130q-32-6-64-9t-64-4q-104 0-200 33t-180 95zm1198 640q6-32 9-64t4-64q0-32-3-64t-10-64h130q5 32 8 64t3 64t-3 64t-8 64zM515 1408q45 60 102 107t122 81t138 50t147 18q32 0 64-3t64-10v130q-32 5-64 8t-64 3q-103 0-200-26t-183-77t-158-121t-123-160zM2048 128v640h-768V128zm-128 128h-512v384h512zm-640 1024h768v640h-768zm128 512h512v-384h-512zm-640-512H0V640h768zM640 768H128v384h512z"
-                            />
-                          </svg>
-                          <hr />
-                        </div>
-                      </span>
-                    </li>
-                  )}
                 </ul>
 
                 <div>
@@ -856,9 +830,9 @@ const MainNav = () => {
                       </p>
                       <ul className="px-4 pb-20">
                         <li>
-                          <span
+                          <Link
                             className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
-                            href="#"
+                            href="/profile/setting"
                           >
                             <div className="flex items-center">
                               <svg
@@ -878,12 +852,12 @@ const MainNav = () => {
                                 Settings
                               </p>
                             </div>
-                          </span>
+                          </Link>
                         </li>
                         <li>
-                          <span
+                          <Link
                             className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
-                            href="#"
+                            href="/profile/download-history"
                           >
                             <div className="flex items-center">
                               <svg
@@ -903,12 +877,12 @@ const MainNav = () => {
                                 Download History
                               </p>
                             </div>
-                          </span>
+                          </Link>
                         </li>
                         <li>
-                          <span
+                          <Link
                             className="p-3 py-4 flex items-center justify-between text-gray-700 hover:text-green-500 hover:bg-gray-100 rounded-md"
-                            href="#"
+                            href="/profile/login-history"
                           >
                             <div className="flex items-center">
                               <svg
@@ -928,7 +902,7 @@ const MainNav = () => {
                                 Login History
                               </p>
                             </div>
-                          </span>
+                          </Link>
                         </li>
 
                         <li>

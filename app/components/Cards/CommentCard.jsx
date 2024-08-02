@@ -263,11 +263,11 @@ const CommentCard = ({ examData }) => {
               </button>
             </div>
           </form>
-          <div className="text-gray-700 font-bold text-2xl mt-2">
+          <div className="text-gray-700 font-bold text-2xl mb-3 mt-2">
             Recent Comments
           </div>
         </div>
-        <hr />
+        {comments?.comments?.length >= 1 && <hr />}
         <div className="m-auto container">
           <Box sx={{ padding: "20px", bgcolor: "white" }}>
             {comments?.comments?.slice(0, 30).map((item, index) => {
