@@ -11,6 +11,11 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: "https://examprince.com/video-courses",
+      lastModified: "2024-04-17",
+      priority: 0.8,
+    },
+    {
       url: "https://examprince.com/cart",
       lastModified: "2024-04-17",
       changeFrequency: "yearly",
