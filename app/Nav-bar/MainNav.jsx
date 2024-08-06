@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { Base_URL } from "../URL's/Base_URL";
 import { X_API_Key } from "../URL's/Api_X_Key";
 
-
 const MainNav = () => {
   const router = useRouter();
   const [isNavVisible, setIsNavVisible] = useState(false);
