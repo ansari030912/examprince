@@ -1,6 +1,5 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 

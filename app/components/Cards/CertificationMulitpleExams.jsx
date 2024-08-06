@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card, Grid, Typography } from "@mui/material";
-import BackCountDown from "./BackCountDown";
 import Link from "next/link";
+import BackCountDown from "./BackCountDown";
 
 const CertificationMulitpleExams = ({ data }) => {
   return (

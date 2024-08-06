@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import BackCountDown from "../components/Cards/BackCountDown";
 
 const NavTop = () => {

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function BackCountDown() {
   const initialDuration = 16 * 60 * 60 * 1000;

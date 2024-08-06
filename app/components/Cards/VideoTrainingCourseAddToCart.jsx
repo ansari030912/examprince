@@ -1,7 +1,7 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { Snackbar, SnackbarContent } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 
 const VideoTrainingCourseAddToCart = ({ data }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);

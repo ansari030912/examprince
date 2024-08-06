@@ -1,8 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
-/* eslint-disable @next/next/no-img-element */
-
 import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";

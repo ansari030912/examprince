@@ -13,7 +13,6 @@ export default async function sitemap() {
   }
 
   const data = await response.json();
-  
 
   return data?.certs?.map((item) => ({
     url: `https://examprince.com/vendor-exam-questions/${

@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import LoginPage from "../components/IndexPages/LoginPage";
 import loginAuth from "../auth/LoginAuth";
+import LoginPage from "../components/IndexPages/LoginPage";
 
 const page = () => {
   return <LoginPage />;

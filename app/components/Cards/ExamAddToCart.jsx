@@ -3,8 +3,8 @@
 import moment from "moment";
 import Link from "next/link";
 import AddToCart from "./AddToCart";
-import ExamStats from "./ExamStats";
 import ExamDetailCard from "./ExamDetailCard";
+import ExamStats from "./ExamStats";
 const ExamAddToCart = ({ examData }) => {
   return (
     <>

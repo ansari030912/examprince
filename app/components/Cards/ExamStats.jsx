@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 
 const ExamStats = ({ examData }) => {

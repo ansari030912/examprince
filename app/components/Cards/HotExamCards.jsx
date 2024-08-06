@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
 import { CardMedia, Grid } from "@mui/material";
+import Link from "next/link";
+import { useState } from "react";
 
 const HotExamCards = ({ data }) => {
   const [toggle, setToggle] = useState(false);

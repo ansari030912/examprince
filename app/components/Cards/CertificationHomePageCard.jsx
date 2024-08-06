@@ -1,8 +1,8 @@
 "use client";
 // pages/index.js
-import { useEffect, useRef } from "react";
 import { Avatar, Box, Card, CardContent, Typography } from "@mui/material";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   const cardsRef = useRef([]);

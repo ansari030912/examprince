@@ -1,4 +1,5 @@
 "use client";
+import { Icon } from "@iconify/react";
 import {
   Box,
   Card,
@@ -10,7 +11,6 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
 import BackCountDown from "./BackCountDown";
 
 const AddToCart = ({ examData }) => {
@@ -104,9 +104,7 @@ const AddToCart = ({ examData }) => {
               </Link>
             </div>
             <div className="lg:ml-2 lg:mr-8 mb-4 w-95 border-t-2"></div>
-            <p class="text-xl font-bold text-gray-700 mb-4">
-              Select Product
-            </p>
+            <p class="text-xl font-bold text-gray-700 mb-4">Select Product</p>
             <Grid
               container
               spacing={2}
